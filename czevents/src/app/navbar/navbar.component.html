@@ -1,0 +1,79 @@
+<div class="navBar">
+    <div class="navBarTop">
+        <div class="navBarTopConstruct">
+             <div class="LeftPart"> 
+                <div>
+                  <img src="./assets/website-logo.png" class="imgLogo" [routerLink]="['/Main']"/>
+                </div>
+                <div class="searchBar">
+                  <form class="example" id="example" action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search2">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+                </div>
+             </div>
+             <div class="LoginForm">
+              <div class="ConstructLogin">
+                <div class="Language" style="display: none;">
+                  <p>Language: </p>
+                  <select>
+                    <option>ENG</option>
+                    <option>CZ</option>
+                    <option>RUS</option>
+                  </select>
+                </div>
+                <div class="LoginAndBasket">
+                  <div class="LoginDiv" [routerLink]="isLoggedIn ? ['/Profile'] : ['/Login']">
+                    <i class="fa fa-user fa-5x" style="font-size: 25px;color: white;"></i>
+                    <p style="font-weight: bold;">{{ isLoggedIn ? user.username : 'Login' }}</p>
+                  </div>
+                  <div class="ticketBasket">
+                    <i class="fa fa-ticket" aria-hidden="true" style="color: white;"><a class="ticketAmount">&nbsp;0</a></i>
+                  </div>
+                  <div *ngIf="isLoggedIn" class="LoginDiv">
+                    <h4 style="font-weight: bold; margin-left: 10px;color: #183765; cursor: pointer;" (click)="logout()">Logout</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="navBarBottom">
+      <div class="navBarBottomConstruct">
+        <div class="navBarBottomConstructItems">
+          <p [routerLink]="['/Main']">ALL</p>
+          <p [routerLink]="['/Events/MUSIC']">MUSIC</p>
+          <p [routerLink]="['/Events/GALLERY']">GALLERY</p>
+          <p [routerLink]="['/Events/THEATER']">THEATER</p>
+          <p [routerLink]="['/Events/SPORT']">SPORT</p>
+          <p [routerLink]="['/Events/LEISURE']">LEISURE</p>
+          <p [routerLink]="['/Events/SHOW']">SHOW</p>
+          <p [routerLink]="['/Events/FESTIVAL']">FESTIVAL</p>
+          <p [routerLink]="['/Events/SEMINAR']">SEMINAR</p>
+        </div> 
+        <div class="searchBar2" id="invisible">
+          <form class="example" action="/action_page.php" style="margin:auto;width:300px">
+            <input type="text" placeholder="Search.." name="search2">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <i class="fa fa-bars" (click)="toggleMenu()" aria-hidden="true" id="invisible" *ngIf="!menuVisible"></i> 
+        <i class="fa fa-times"(click)="toggleMenu()" aria-hidden="true" id="invisible" style="font-size: 29px;" *ngIf="menuVisible"></i>
+      </div>
+    </div>
+    <div class="menu-responsive" *ngIf="menuVisible">
+        <p [routerLink]="['/Main']">ALL</p>
+        <p [routerLink]="['/Events/MUSIC']">MUSIC</p>
+        <p [routerLink]="['/Events/GALLERY']">GALLERY</p>
+        <p [routerLink]="['/Events/THEATER']">THEATER</p>
+        <p [routerLink]="['/Events/SPORT']">SPORT</p>
+        <p [routerLink]="['/Events/LEISURE']">LEISURE</p>
+        <p [routerLink]="['/Events/SHOW']">SHOW</p>
+        <p [routerLink]="['/Events/FESTIVAL']">FESTIVAL</p>
+        <p [routerLink]="['/Events/SEMINAR']">SEMINAR</p>
+      </div>
+</div>
+
+
+
+<app-slides *ngIf="showSlider" class="slider"></app-slides>

@@ -1,0 +1,214 @@
+.MainDiv {
+    display: flex;
+    justify-content: space-between; /* Align items evenly */
+}
+
+.banners-container {
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
+    margin-right: 20px; /* Adjust horizontal distance between form and images */
+}
+
+.banner {
+    margin-bottom: 10px; /* Adjust spacing between images */
+}
+
+.banner-img {
+    width: auto; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.form-container {
+    width: 500px; /* Adjust form container width as needed */
+}
+
+input[type="file"], input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.block-label {
+    display: block; /* Set labels to display as block elements */
+    margin-bottom: 5px; /* Add some bottom margin for spacing */
+    font-family: sans-serif;
+    font-size: 18px;
+}
+.dltBTN{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+.sbm{
+    width: 200px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    background-color: #72F47C;
+}
+.mainDiv{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.TicketDiv {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    margin-top: 80px;
+    overflow: hidden;
+  }
+  
+  .TicketDiv img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s;
+  }
+  
+  .TicketDiv:hover img {
+    opacity: 0;
+  }
+  
+  .TicketDiv .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 450px;
+    min-height: 50px;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+  }
+  
+  .TicketDiv:hover .overlay {
+    transform: translateY(0);
+  }
+  .datePart{
+    display: flex;
+    align-items: center;
+  }
+  .Location{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .PriceTag{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .datePart h3{
+    margin-left: 20px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    margin-top: 25px;
+    color: #183765;
+  }
+  .Title{
+    font-family: sans-serif;
+    color: #183765;
+  }
+  .Location h3{
+    margin-left: 20px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    margin-top: 25px;
+    color: #183765;
+  }
+  .PriceTag h3{
+    margin-left: 5px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    margin-top: 25px;
+    color: #183765;
+  }
+  .buttonBuy{
+    width: 220px;
+    height: 30px;
+    background-color: #183765;
+    margin-left: 3px;
+    border: none;
+    background-color: #DDDCDA;
+    color: #183765;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .btnaddevent{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(157, 202, 238);
+    border: none;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+
+  .navbar{
+    width: 100%;
+    height: 80px;
+    background-color: lightgrey;
+    margin-top: 0px;
+}
+ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-family: sans-serif;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 35px 30px;
+    text-decoration: none;
+    width: 100px;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: blue;
+  }
+  .logout{
+    background-color: red;
+    color: white;
+    position: absolute;
+    margin-left: 74.5%;
+  }

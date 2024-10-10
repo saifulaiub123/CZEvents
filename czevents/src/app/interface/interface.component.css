@@ -1,0 +1,256 @@
+.MainPart{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: start;
+  height: auto;
+}
+
+.mainDiv{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.TicketDiv {
+    position: relative;
+    width: 290px;
+    height: 390px;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+  
+  .TicketDiv img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s;
+  }
+  
+  .TicketDiv:hover img {
+    opacity: 0;
+  }
+  
+  .TicketDiv .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 390px;
+    min-height: 50px;
+    background-color: white;
+    color: black;
+    padding: 20px; /* Adjust this value to increase or decrease the space */
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    justify-content: space-around;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+}
+
+#top {
+    margin-top: 10px; /* Adjust this value to create space between top and bottom sections */
+}
+#bottom{
+  position: fixed;
+  width: 100%;
+  top: 250px;
+}
+.TicketDiv:hover .overlay {
+  transform: translateY(0);
+}
+.datePart{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.Location{
+  display: flex;
+  align-items: center;
+  margin-top: -15px;
+  margin-left: -5px;
+}
+.PriceTag{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.datePart h3{
+  margin-left: 20px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  margin-top: 22px;
+  color: #183765;
+}
+.Title{
+  font-family: sans-serif;
+  color: #183765;
+  font-size: 18px;
+}
+.Location h3{
+  margin-left: 10px;
+  max-width: 200px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  margin-top: 15.5px;
+  color: #183765;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.PriceTag h3{
+  margin-left: 5px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  margin-top: 25px;
+  color: #183765;
+}
+.buttonBuy{
+  width: 85%;
+  margin-left: 5%;
+  height: 40px;
+  background-color: #183765;
+  margin-left: 3px;
+  border: none;
+  background-color: #DDDCDA;
+  color: #183765;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+  .filter{
+    display: none;
+  }
+  .contact{
+    display: none;
+  }
+  .TicketDiv{
+    width: 160px;
+    height: 245px;
+  }
+  .MainPart{
+    width: 99%;
+    display: block;
+  }
+  .mainDiv{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 0px;
+  }
+  h3{
+    font-size: 15px;
+  }
+  .TicketDiv .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    padding: 0px; /* Adjust this value to increase or decrease the space */
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    justify-content: space-around;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+}
+#top {
+  position: static;
+  margin-top: 0px;
+  width: 100%; /* Adjust this value to create space between top and bottom sections */
+}
+#bottom{
+  position: static;
+  width: 100%;
+  margin-top: 0px;
+}
+.TicketDiv:hover .overlay {
+  transform: translateY(0);
+}
+.datePart{
+  margin-top: 0px;
+}
+.datePart svg{
+  display: none;
+}
+.Location{
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+.PriceTag{
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+}
+.datePart h3{
+  margin-left: 10px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 13px;
+  margin-top: 10px;
+  color: #183765;
+}
+.Title{
+  font-family: sans-serif;
+  color: #183765;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-left: 10px;
+  max-width: 90%;
+}
+.Location h3{
+  margin-left: 10px;
+  max-width: 150px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 13px;
+  margin-top: 0px;
+  color: #183765;
+}
+.Location svg{
+  display: none;
+}
+.PriceTag h3{
+  position: fixed;
+  top: 175px;
+  margin-left: 10px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  margin-top: 0px;
+  color: #183765;
+}
+.buttonBuy{
+  position: fixed;
+  top: 200px;
+  width: 90%;
+  height: 30px;
+  margin-left: 5%;
+  margin-top: 0px;
+  background-color: #183765;
+  border: none;
+  background-color: #DDDCDA;
+  color: #183765;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+}

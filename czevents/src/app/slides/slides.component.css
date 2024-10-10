@@ -1,0 +1,121 @@
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    top: 0px;
+  }
+  .fullslides{
+    display: flex;
+    justify-content: space-between;
+  }
+  .buttons{
+    margin-left: calc((100% - 63%) / 2);
+    width: 63%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 140px;
+  }
+  #othrSlide{
+    width: 22%;
+    height: 300px;
+  }
+  .slideshow{
+    height: auto;
+  }
+  .slide {
+    display: none;
+    width: 54%;
+    height: 300px;
+    object-fit: cover; /* Ensures images maintain aspect ratio */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .slide img{
+    width: 100%;
+    height: 300px;
+  }
+  .slide.active {
+    display: block;
+  }
+  
+
+  @media screen and (max-width: 1524px) {
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 400px; /* Adjust height as needed */
+      top: 0px;
+    }
+    .fullslides{
+      display: flex;
+    }
+    .buttons{
+      margin-left: calc((100% - 1100px) / 2);
+      width: 1105px;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 140px;
+    }
+    #othrSlide{
+      width: 275px;
+      height: 300px;
+      filter: blur(5px);
+    }
+    .slideshow{
+      height: auto;
+    }
+    .slide {
+      display: none;
+      width: 900px;
+      height: 300px;
+      object-fit: cover; /* Ensures images maintain aspect ratio */
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+    .slide img{
+      width: 900px;
+      height: 300px;
+    }
+    .slide.active {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .buttons {
+      margin-left: calc((100% - 90%) / 2);
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 80px;
+    }
+  
+    #othrSlide {
+      display: none;
+    }
+  
+    .slide {
+      display: none;
+      width: 100vw; /* Make the slide container fill the entire viewport width */
+      height: 200px;
+      object-fit: cover;
+      margin-left: 0; /* Remove any extra margin */
+      margin-right: 0;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .slide img {
+      width: 100%; /* Ensure the image fills the width of the container */
+      height: 100%; /* Ensure the image fills the height */
+      object-fit: cover; /* Crop the image to fill the container without distortion */
+    }
+  
+    .slide.active {
+      display: block;
+    }
+  }

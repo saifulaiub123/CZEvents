@@ -1,0 +1,45 @@
+<app-navbar [showSlider]="false"></app-navbar>
+<div class="buyer-part">
+    <div class="buyer-part-construction">
+        <div class="buyer-parts">
+            <div class="sections-of-buyer">
+                 <h3 class="title"><b>ACCOUNT</b></h3>
+                 <ul>
+                    <li>My cashier</li>
+                    <li>My cashier</li>
+                    <li>Basic settings</li>
+                    <li>Terms of use</li>
+                 </ul>
+            </div>
+        </div>
+        <div class="information">
+            <div class="info-part">
+                <h2 class="info-title">All items of the category</h2>
+                <div class="login-signup-component">
+                    <div class="login-signup-component-constructor-component">
+                         <div class="option-titles">
+                           <div id="login" 
+                          (click)="onUpcomingClick()" 
+                          [ngClass]="{'active-login': isUpcomingActive, 'inactive': !isUpcomingActive, 'bg-fbfbfb': !isUpcomingActive}">
+                       <h4>Upcoming events</h4>
+                     </div>
+                     <div id="registration-form" 
+                          (click)="onPastClick()" 
+                          [ngClass]="{'active-registration': !isUpcomingActive, 'inactive': isUpcomingActive, 'bg-fbfbfb': isUpcomingActive}">
+                       <h4>Past events</h4>
+                     </div>
+                         </div>
+                         <div class="form" [ngClass]="{'form-expanded': !isUpcomingActive}">
+                           <div class="login-form" *ngIf="isUpcomingActive">
+                               
+                             </div>
+                              <div class="login-form" *ngIf="!isUpcomingActive">
+                               
+                             </div>   
+                         </div>
+                    </div>
+               </div>       
+            </div>
+        </div>
+    </div>
+</div>

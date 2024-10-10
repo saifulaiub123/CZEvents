@@ -1,0 +1,60 @@
+<div class="navbar">
+  <ul>
+      <li><a routerLink="/Admin">Admin Panel</a></li>
+      <li><a href="#" routerLink="/EditSlides">Edit Banners</a></li>
+      <li><a href="#" class="logout" (click)="logOut()">Logout</a></li>
+  </ul>
+</div>
+
+<form [formGroup]="eventForm" #myForm (ngSubmit)="onSubmit()">
+  <label>Name</label>
+  <input type="text" name="Name" formControlName="Name" required>
+
+  <label>Location</label>
+  <input type="text" name="Location" formControlName="Location" required>
+
+  <label>Date</label>
+  <input type="text" name="Date" formControlName="Date" required>
+
+  <label>Type</label>
+  <select name="Type" formControlName="Type" required>
+    <option value="" disabled selected>Select a type</option>
+    <option value="MUSIC">MUSIC</option>
+      <option value="GALLERY">GALLERY</option>
+      <option value="THEATER">THEATER</option>
+      <option value="SPORT">SPORT</option>
+      <option value="LEISURE">LEISURE</option>
+      <option value="SHOW">SHOW</option>
+      <option value="FESTIVAL">FESTIVAL</option>
+      <option value="SEMINAR">SEMINAR</option>
+  </select>
+
+  <label>Description</label>
+  <textarea name="Description" formControlName="Description" required></textarea>
+
+  <label>Organizer Name</label>
+  <input type="text" name="OrganizerName" formControlName="OrganizerName" required>
+
+  <label>Organizer Email</label>
+  <input type="email" name="OrganizerEmail" formControlName="OrganizerEmail" required>
+
+  <label>Organizer Number</label>
+  <input type="tel" name="OrganizerNumber" formControlName="OrganizerNumber" required>
+
+  <label>Link</label>
+  <input type="url" name="Link" formControlName="Link">
+
+  <label>Photo</label>
+  <input type="file" name="Photo">
+
+  <div formArrayName="priceRange">
+    <div *ngFor="let price of priceRange.controls; let i = index">
+      <label for="priceRange-{{i}}">Price Range {{i + 1}}:</label>
+      <input type="text" [formControlName]="i" id="priceRange-{{i}}" placeholder="Enter price">
+      <button type="button" (click)="removePrice(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addPrice()">Add Price Range</button>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

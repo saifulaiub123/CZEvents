@@ -1,0 +1,544 @@
+body{
+    padding: 0px;
+    margin: 0px; 
+}
+.navBar{
+    width: 100%;
+    height: 200px;
+}
+.navBarTop{
+    width: 100%;
+    height: 145px;
+    background-color: #F4F5FE;
+    overflow: hidden;
+}
+.navBarBottom{
+    width: 100%;
+    height: 55px;
+    background-color: #3C74FF;
+}
+.navBarTopConstruct{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.searchBar{
+    width: 450px;
+    max-width: 500px;
+    height: 40px;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+}
+.searchBarInput{
+    width: 450px;
+    height: 36px;
+    margin-top: -2px;
+    border: 0;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.imgLogo{
+    width: 280px;
+    height: 100px;
+    cursor: pointer;
+}
+.searchBtn{
+    width: 45px;
+    height: 38px;
+    margin-top: -3px;
+    border: 0;
+}
+.searchBtnImg{
+    width: 20px;
+    height: 20px;
+}
+.navBarBottomConstruct{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: sans-serif;
+    font-weight: normal;
+    overflow: hidden;
+}
+.navBarBottomConstructItems{
+    width: 53%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3px;
+}
+.navBarBottomConstructItems > p{
+    cursor: pointer;
+}
+.invisible{
+    display: none;
+    text-align: center;
+    margin-top: 18px;
+}
+
+.CheckoutDiv{
+    display: flex;
+    align-items: flex-start;
+}
+.ChoosenTicket{
+    width: 250px;
+    height: 490px;
+    border: 1px solid lightgray;
+    margin-top: 50px;
+    margin-left: 50px;
+    font-family: sans-serif;
+    color: #183765;
+}
+.ChoosenTicket h3{
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.ChoosenTicket p{
+    margin-left: 15px;
+}
+.checkoutTitle{
+    margin-left: 15px;
+    max-width: 230px;
+}
+.ChoosenTicket .datePart{
+    margin-left: 15px;
+    font-weight: lighter;
+}
+.ChoosenTicket .datePart p{
+    margin-left: 15px;
+    font-weight: lighter;
+}
+.ChoosenTicket .Location{
+    margin-left: 15px;
+}
+.ChoosenTicket .PriceTag{
+    margin-left: 15px;
+}
+.ChoosenTicket .buttonBuy{
+    margin-top: 0px;
+    margin-left: 15px;
+}
+
+.QuantityTag {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.QuantityTag button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.QuantityTag button:focus {
+    outline: none;
+}
+
+.QuantityTag #quantity {
+    font-size: 18px;
+    width: 30px;
+    text-align: center;
+}
+.selectedTickets{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin-left: 5%;
+    justify-content: space-between;
+}
+.selectedTickets h4{
+    font-size: 21px;
+}
+.selectedTickets i{
+    font-size: 28px;
+    font-weight: lighter;
+    cursor: pointer;
+}
+.selectTicketQuantity{
+    display: flex;
+}
+@media screen and (max-width: 1200px) {
+    .navBarTopConstruct{
+        width: 80%;
+    }
+    .searchBar{
+        width: 30%;
+    }
+    .imgLogo{
+        width: 20%;
+    }
+    .navBarBottomConstructItems{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 992px) {
+    .navBarTopConstruct{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+    }
+    .searchBar{
+        width: 450px;
+        max-width: 500px;
+    }
+    .searchBarInput{
+        width: 450px;
+        height: 36px;
+        margin-top: -2px;
+        border: 0;
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+    .imgLogo{
+        width: 220px;
+        height: 80px;
+    }
+    .navBarBottomConstruct{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        font-family: sans-serif;
+        font-weight: normal;
+        overflow: hidden;
+    }
+    .navBarBottomConstructItems{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3px;
+    }
+    .navBarBottomConstructItems > p{
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .CheckoutDiv{
+        display: block;
+    }
+    .navBarBottom{
+        display: block;
+    }
+    .navBarBottomConstructItems{
+        height: 85vh;
+        max-height: 85%;
+    }
+    .navBarBottomConstructItems > p{
+        margin-left: 20px;
+        font-family: sans-serif;
+        margin-top: 30px;
+        max-height: 90vh;
+    }
+    .navBarTop{
+        height: 150px;
+    }
+    .navBarTopConstruct{
+        flex-direction: column;
+
+    }
+    .searchBar{
+        max-width: 95%;
+    }
+
+    .invisible{
+        display: block;
+    }
+}
+
+.eventPicture{
+  width: 236px;
+  height: 342px;
+}
+
+.LeftSideDescriptionBox{
+    margin-top: 50px;
+    margin-left: 10%;
+    width: 55%;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid lightgrey;
+}
+.LeftSidePurchaseBox{
+    width: 100%;
+    height: 250px;
+    border: 1px solid lightgray;
+    margin-top: 2%;
+}
+.RightSidePricingInformation{
+    width: 99%;
+    height: 220px;
+    border: 1px solid lightgray;
+    overflow: hidden;
+}
+.RightSideLocation{
+    width: 99%;
+    height: 200px;
+    border: 1px solid lightgray;
+    margin-top: 3%;
+}
+.RightSideLocation p{
+    max-width: 90%;
+}
+.OrganizerInformation{
+    width: 99%;
+    height: 210px;
+    border: 1px solid lightgray;
+    margin-top: 3%;
+}
+.LeftSideDescriptionBoxItems{
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.LeftSideDescriptionBoxText{
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+    font-family: sans-serif;
+    color: #183765;
+}
+.TitleOfEvent{
+    width: 600px;
+    max-width: 600px;
+    font-family: sans-serif;
+    color: #183765;
+}
+.datePart{
+    display: flex;
+    align-items: center;
+}
+  
+.datePart h3{
+    margin-left: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    color: #183765;
+}
+.Location{
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+  }
+.PriceTag{
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.Location h3{
+    margin-left: 20px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    color: #183765;
+    max-width: 400px;
+}
+.PriceTag h3{
+    margin-left: 5px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    color: #183765;
+}
+ 
+  select {
+    width: 220px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    margin-left: 3px;
+    font-size: 20px;
+  }
+  
+
+  
+  /* Style for options */
+  option {
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+  }
+  
+  /* Style for selected option */
+  option:checked {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+.buttonBuy{
+    margin-top: 30px;
+    width: 220px;
+    height: 40px;
+    background-color: #183765;
+    margin-left: 3px;
+    border: none;
+    background-color: #DDDCDA;
+    color: #183765;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .LeftSidePurchaseBox{
+    overflow: hidden;
+  }
+  .LeftSidePurchaseBoxTitles{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    color: #183765;
+    font-weight: bold;
+    font-family: sans-serif; 
+  }
+  .LeftSidePurchaseBoxTitles p{
+    width: 180px;
+    margin-left: 0px;
+  }
+  .LeftSidePurchaseBoxTitleValues{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    display: flex;
+  }
+  .LeftSidePurchaseBoxTitleValues p{
+    width: 180px;
+    max-width: 180px;
+    color: #183765;
+    font-weight: normal;
+    font-family: sans-serif; 
+    font-size: 15px;
+  }
+  .btn{
+    width: 220px;
+    height: 40px;
+    background-color: #DDDCDA;
+    color: #183765;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 90px;
+    margin-top: 40px;
+    cursor: pointer;
+  }
+  .EventBoxRightSide h3{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    font-family: sans-serif;
+    font-size: 17px;
+    color: #183765;
+  }
+  .EventBoxRightSide p{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: sans-serif;
+    font-size: 17px;
+    color: #183765;
+  }
+  .RightSideLocation h4{
+    width: 60%;
+    margin-left: 10%;
+    margin-top: 30px;
+    font-family: sans-serif;
+    font-size: 17px;
+    color: #183765;
+  }
+  .RightSideLocation pre{
+    width: 60%;
+    margin-left: 10%;
+    font-family: sans-serif;
+    font-size: 17px;
+    color: #183765;
+  }
+
+  @media screen and (max-width: 768px) {
+    .LeftSideDescriptionBox{
+        width: 90%;
+        margin-left: 15px;
+        height: 500px;
+        overflow: hidden;
+        border: 1px solid lightgrey;
+    }
+    .ChoosenTicket{
+        margin-left: 15px;
+    }
+    .LeftSidePurchaseBox{
+        width: 100%;
+        height: 250px;
+        border: 1px solid lightgray;
+        margin-top: 2%;
+    }
+    .RightSidePricingInformation{
+        width: 99%;
+        height: 220px;
+        border: 1px solid lightgray;
+        overflow: hidden;
+    }
+    .LeftSideDescriptionBox{
+      height: auto;
+    }
+    .LeftSideDescriptionBoxItems{
+      width: 90%;
+      margin-left: 5%;
+      display: block;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 30px;
+  }
+  .LeftSideDescriptionBoxText{
+      width: 90%;
+      margin-left: 5%;
+      font-family: sans-serif;
+      color: #183765;
+  }
+  .LeftSidePurchaseBox{
+    display: none;
+  }
+  .EventBoxRightSide{
+    height: auto;
+  }
+  .MainDivConstruct{
+    margin-top: 100px;
+  }
+  .EventCategory{
+    font-size: 14px;
+  }
+  .TitleOfEvent{
+    max-width: 70%;
+  }
+  }
+ 

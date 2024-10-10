@@ -1,0 +1,99 @@
+.buyer-part{
+    width: 100%;
+    height: auto;
+}
+.buyer-part-construction{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.buyer-parts{
+    width: 20%;
+    overflow: hidden;
+}
+.information{
+    width: 75%;
+    overflow: hidden;
+}
+.sections-of-buyer{
+    width: 100%;
+    height: 350px;
+    background-color: white;
+}
+.title{
+    padding: 10px 5px;
+    background-color: #183765;
+    text-align: left;
+    font-family: sans-serif;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+.title b{
+    margin-left: 17px;
+}
+ul{
+    margin-top: 35px;
+}
+ul li{
+    font-size: 15px;
+    margin-top: 23px;
+    font-family: sans-serif;
+    color: #183765;
+    cursor: pointer;
+}
+li:hover{
+    text-decoration: underline;
+}
+.info-title{
+    font-size: 22px;
+    font-family: Rubik, sans-serif;
+    color: #183765;
+}
+.information-part-title{
+    font-size: 19px;
+    font-family: Rubik, sans-serif;
+    color: #183765;
+}
+.info-text{
+    font-size: 15px;
+    font-family: Rubik, sans-serif;
+    color: #183765;
+    max-width: 100%;
+    white-space: pre-wrap;        /* Wraps text to the next line */
+    word-wrap: break-word;        /* Breaks long words and wraps them */
+    overflow-wrap: break-word;
+    line-height: 1.1; 
+}
+.dashed-line {
+    border: none; /* Remove default border */
+    border-top: 1.5px dashed grey; /* Create a dashed line */
+    margin: 20px 0; /* Optional: Adjust the spacing around the line */
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .buyer-part-construction{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        display: block;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+    .buyer-parts{
+        width: 100%;
+        overflow: hidden;
+    }
+    .information{
+        width: 100%;
+        overflow: hidden;
+    }
+}

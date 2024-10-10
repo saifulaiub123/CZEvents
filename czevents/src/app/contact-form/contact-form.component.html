@@ -1,0 +1,37 @@
+<div class="contact-form-container">
+    <div class="row">
+      <div class="column">
+        <h4 (click)="navigateToBuyer('all')">Buyer</h4>
+        <p (click)="navigateToBuyer('eticket')">E - ticket</p>
+        <p (click)="navigateToBuyer('terms')">General Terms of Use</p>
+        <p (click)="navigateToBuyer('buy')">How to buy a ticket</p>
+        <p (click)="navigateToBuyer('payment')">Payment method</p>
+        <p (click)="navigateToBuyer('privacy')">Privacy Policy</p>
+      </div>
+      <div class="column">
+        <h4 (click)="navigateToOrganizer('all')">Organizer</h4>
+        <p (click)="navigateToOrganizer('all')">General Terms and Conditions</p>
+        <p>Registration form</p>
+      </div>
+      <div class="column">
+        <h4>Directions</h4>
+        <p [routerLink]="['/Main']">ALL</p>
+        <p [routerLink]="['/Events/MUSIC']">MUSIC</p>
+        <p [routerLink]="['/Events/GALLERY']">GALLERY</p>
+        <p [routerLink]="['/Events/THEATER']">THEATER</p>
+        <p [routerLink]="['/Events/SPORT']">SPORT</p>
+        <p [routerLink]="['/Events/LEISURE']">LEISURE</p>
+        <p [routerLink]="['/Events/SHOW']">SHOW</p>
+        <p [routerLink]="['/Events/FESTIVAL']">FESTIVAL</p>
+        <p [routerLink]="['/Events/SEMINAR']">SEMINAR</p>
+      </div>
+      <div class="column">
+        <h4>About company</h4>
+        <p>About Us</p>
+        <p>Contacts</p>
+        <h4>NEWSLETTER ticketconcert.cz</h4>
+        <p>Enter your e-mail</p>
+        <h4>WE ARE IN SOCIAL NETWORKS</h4>
+      </div>
+    </div>
+  </div>

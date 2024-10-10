@@ -1,0 +1,41 @@
+
+.date-range-form {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    max-width: 300px;
+    margin-left: 0px;
+    font-family: sans-serif;
+    color: #183765;
+}
+
+/* Styling for labels */
+.date-range-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Styling for date inputs */
+.date-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Styling for the calendar pop-up */
+.date-input::-webkit-calendar-picker-indicator {
+    filter: invert(0.5); /* Changes the color of the calendar icon */
+}
+
+/* Focus state for inputs */
+.date-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}

@@ -1,0 +1,85 @@
+<app-navbar [showSlider]="false"></app-navbar>
+<div class="login-signup-component">
+     <div class="login-signup-component-constructor-component">
+          <div class="option-titles">
+            <div id="login" 
+           (click)="onLoginClick()" 
+           [ngClass]="{'active-login': isLoginActive, 'inactive': !isLoginActive, 'bg-fbfbfb': !isLoginActive}">
+        <h4>Log in</h4>
+      </div>
+      <div id="registration-form" 
+           (click)="onRegistrationClick()" 
+           [ngClass]="{'active-registration': !isLoginActive, 'inactive': isLoginActive, 'bg-fbfbfb': isLoginActive}">
+        <h4>Registration form</h4>
+      </div>
+          </div>
+          <div class="form" [ngClass]="{'form-expanded': !isLoginActive}">
+            <div class="login-form" *ngIf="isLoginActive">
+                <form (ngSubmit)="loginUser()">
+                  <div class="input-icons">
+                    <i class="fa fa-user icon"></i>
+                    <input class="input-field" type="text" placeholder="Login or phone number" [(ngModel)]="loginData.emailOrPhone" name="emailOrPhone" required>
+                  </div>
+                  <div class="input-icons">
+                    <i class="fa fa-lock icon"></i>
+                    <input class="input-field" type="password" placeholder="Password" [(ngModel)]="loginData.password" name="password" required>
+                  </div>
+                  <div class="login-settings">
+                    <div class="login-settings-construction">
+                      <div>
+                        <label class="container">Remember me
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div>
+                        <p>Forgot your password?</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="login-button">Sign in</button>
+                </form>
+              </div>
+               <div class="login-form" *ngIf="!isLoginActive">
+                <form (ngSubmit)="registerUser()">
+                  <div class="input-icons">
+                    <i class="fa fa-user icon"></i>
+                    <input class="input-field" type="text" placeholder="Login" [(ngModel)]="user.username" name="username" required>
+                  </div>
+                  <div class="input-icons">
+                    <i class="fa fa-envelope icon" style="font-size: 20px;margin-top: 9px;"></i>
+                    <input class="input-field" type="email" placeholder="Email" [(ngModel)]="user.email" name="email" required>
+                  </div>
+                  <div class="input-icons">
+                    <i class="fa fa-mobile icon" style="font-size: 30px;margin-top: 4px;"></i>
+                    <!-- Changed input type to text to handle the mobile number as a string -->
+                    <input class="input-field" type="text" placeholder="Mobile number" [(ngModel)]="user.mobileNumber" name="mobileNumber" required>
+                  </div>
+                  <div class="input-icons">
+                    <i class="fa fa-lock icon"></i>
+                    <input class="input-field" type="password" placeholder="Password" [(ngModel)]="user.password" name="password" required>
+                  </div>
+                  <div class="input-icons">
+                    <i class="fa fa-lock icon"></i>
+                    <input class="input-field" type="password" placeholder="Confirm password" [(ngModel)]="user.confirmPassword" name="confirmPassword" required>
+                  </div>
+                  <div class="login-settings">
+                    <div class="login-settings-construction">
+                      <div style="margin-top: 15px;">
+                        <label class="container">Remember me
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="login-button" [disabled]="isRegistering">Sign up</button>
+                </form>
+              </div>
+              
+              
+               
+          </div>
+     </div>
+</div>
+<app-contact-form class="contact-form"></app-contact-form>

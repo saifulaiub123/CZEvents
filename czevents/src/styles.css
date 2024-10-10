@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #FBFBFB;
+}
+/* If you want to target all slider handles */
+.ngx-slider-pointer {
+    width: 25px; /* Adjust the width */
+    height: 25px; /* Adjust the height */
+    background-color: #007bff; /* Change the background color */
+    border-radius: 50%; /* Make it circular */
+    border: 2px solid #0056b3; /* Add a border */
+    cursor: pointer; /* Change cursor to pointer */
+  }
+ 
+  .ngx-slider .ngx-slider-pointer {
+    margin-top: 3px;
+    cursor: pointer;
+    max-width: 20px;
+    max-height: 20px;
+    top: 0px;
+    background-color: #0db9f0;
+    z-index: 3;
+    border-radius: 16px;
+}
+.ngx-slider .ngx-slider-span {
+    white-space: nowrap;
+    position: absolute;
+    display: inline-block;
+}
+.ngx-slider-pointer::after {
+    content: '';
+    width: 10x; /* Adjust the width of the white circle */
+    height: 10px; /* Adjust the height of the white circle */
+    background-color: white; /* Color of the inner circle */
+    border-radius: 50%; /* Make it a circle */
+    position: absolute; /* Position absolutely within the span */
+    top: 50%; /* Align vertically */
+    left: 30%; /* Align horizontally */
+    transform: translate(-70%, -70%); /* Center it perfectly */
+}
+.ngx-slider-full-bar{
+    max-width: 190px;
+}

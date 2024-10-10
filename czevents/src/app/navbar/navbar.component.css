@@ -1,0 +1,287 @@
+.navBar{
+    width: 100%;
+    height: auto;
+}
+.navBarTop{
+    width: 100%;
+    height: 125px;
+    background-color: #DDDCDA;
+    overflow: hidden;
+}
+.navBarBottom{
+    width: 100%;
+    height: 41px;
+    background-color: #FFC43A;
+}
+.navBarTopConstruct{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+}
+.LeftPart{
+    width: 70%;
+    display: flex;align-items: center;
+    justify-content: space-between;
+
+}
+* {
+    box-sizing: border-box;
+  }
+#example{
+    width: 650px;
+}
+form.example input[type=text] {
+    padding: 8px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 90%;
+    background: #f1f1f1;
+    outline: 0;
+}
+
+form.example button {
+    float: left;
+    width: 10%;
+    padding: 8px;
+    background: #183765;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-left: none;
+    cursor: pointer;
+    outline: 0;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.LoginForm{
+    width: 10%;
+}
+.imgLogo{
+    width: 215px;
+    height: 52px;
+    cursor: pointer;
+}
+.Language{
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    color: #183765;
+}
+
+.Language select{
+    width: 60px;
+    height: 20px;
+    margin-left: 22.5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #183765;
+    background-color: transparent;
+}
+.LoginDiv {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+}
+.LoginDiv p{
+    margin-left: 5px;
+    color: #183765;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 5px;
+    cursor: pointer;
+}
+.LoginAndBasket{
+    display: flex;
+    align-items: center;
+}
+.fa-ticket{
+    margin-left: 14px;
+    font-size: 18px;
+    padding: 9px 15px;
+    background-color: #183765;
+    cursor: pointer;
+}
+.ticketAmount{
+    font-family: sans-serif;
+}
+.searchBtn{
+    width: 45px;
+    height: 38px;
+    margin-top: -3px;
+    border: 0;
+}
+.searchBtnImg{
+    width: 20px;
+    height: 20px;
+}
+.navBarBottomConstruct{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #183765;
+    font-family: sans-serif;
+    font-weight: normal;
+    overflow: hidden;
+}
+.navBarBottomConstructItems{
+    width: 48%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: Rubik, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -2px;
+}
+#invisible{
+    display: none;
+    text-align: center;
+    margin-top: 18px;
+}
+.slider{
+    display: block;
+    margin-top: 0px;
+}
+.menu-responsive {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 50%; /* Half the screen height */
+    background-color: #183765; /* Background color */
+    z-index: 999; /* Ensure it is on top */
+    padding: 20px;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #FFC43A;
+  }
+  
+@media screen and (max-width: 1200px) {
+    .navBarTopConstruct{
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+    .searchBar{
+        width: 450px;
+        max-width: 500px;
+    }
+    .imgLogo{
+        width: 152px;
+        height: 32px;
+    }
+    .LeftPart{
+        width: 40%;
+    }
+    #example{
+        width: 350px;
+        margin-left: 30px;
+    }
+    .LoginForm{
+        width: auto;
+    }
+    .navBarBottomConstruct{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        color: #183765;
+        font-family: sans-serif;
+        font-weight: normal;
+        overflow: hidden;
+    }
+    .navBarBottomConstructItems{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0px;
+    }
+    .navBarBottomConstructItems > p{
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navBarTop{
+        height: 145px;
+    }
+    .navBarBottom{
+        height: 51px;
+    }
+    .navBarTopConstruct{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+    .LeftPart{
+        width: 40%;
+        display: flex;align-items: center;
+        justify-content: space-between;
+    
+    }
+    .searchBar{
+        display: none;
+    }
+    .LoginForm{
+        width: auto;
+    }
+    .imgLogo{
+        width: 145px;
+        height: 32px;
+    }
+    .searchBtnImg{
+        width: 20px;
+        height: 20px;
+    }
+    .navBarBottom{
+        overflow: hidden;
+    }
+    .navBarBottomConstruct{
+        margin-top: -8px;
+        display: flex;
+        width: 95%;
+        justify-content: space-between;
+    }
+    .navBarBottomConstructItems{
+       display: none;
+    }
+    #invisible{
+        display: block;
+    }
+    .fa-bars{
+        display: block;
+        font-size: 30px;
+        color: white;
+        margin-top: -5px;
+    }
+    .menu-responsive {
+        height: 100vh; /* Take full height on small screens */
+    }
+    
+}

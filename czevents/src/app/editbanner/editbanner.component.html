@@ -1,0 +1,34 @@
+<div class="navbar">
+    <ul>
+        <li><a routerLink="/Admin">Admin Panel</a></li>
+        <li><a href="#" routerLink="/EditSlides" class="active">Edit Banners</a></li>
+        <li><a href="#" class="logout" (click)="logOut()">Logout</a></li>
+    </ul>
+</div>
+
+<div class="MainDiv">
+    <!-- Image list -->
+    <div class="banners-container">
+        <div *ngFor="let slide of slides" class="banner">
+            <img [src]="slide.slide" class="banner-img">
+            <button class="dltBTN" (click)="confirmDelete(slide.id)">DELETE</button>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-container">
+        <h1 style="font-family: sans-serif;text-align: left;">ADD / EDIT / DELETE BANNERS</h1>
+        <form (ngSubmit)="onSubmit()" #myForm>
+            <div class="form-group">
+                <label for="fileInput" class="block-label">File Input:</label>
+                <input type="file" id="fileInput" name="Slide" accept=".jpg,.png" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="textInput" class="block-label">Link of event:</label>
+                <input type="text" id="textInput" name="Link" ngModel required>
+            </div>
+            <button type="submit" class="sbm">Submit</button>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,415 @@
+<app-navbar [showSlider]="false"></app-navbar>
+<div class="buyer-part">
+    <div class="buyer-part-construction">
+        <div class="buyer-parts">
+            <div class="sections-of-buyer">
+                 <h3 class="title"><b>BUYER</b></h3>
+                 <ul>
+                    <li (click)="togglePaymentInfo('allInfo')">ALL</li>
+                    <li (click)="togglePaymentInfo('eTicketInfo')">E - ticket</li>
+                    <li (click)="togglePaymentInfo('generaltermsInfo')">General Terms of Use</li>
+                    <li (click)="togglePaymentInfo('buyTicketInfo')">How to buy a ticket</li>
+                    <li (click)="togglePaymentInfo('paymentInfo')">Payment method</li>
+                    <li (click)="togglePaymentInfo('privacypolicyInfo')">Privacy Policy</li>
+                 </ul>
+            </div>
+        </div>
+        <div class="information">
+            <div class="info-part" *ngIf="allInfo">
+                <h2 class="info-title">All items of the category</h2>
+                <h3 class="information-part-title">E - ticket</h3>
+                <pre class="info-text">
+The electronic ticket <b>(E - ticket)</b> is a convenient way to make a purchase anywhere you have internet access.
+
+<b>You print E - ticket out by yourself.</b> In case you don’t have immediate printer access when you purchase the ticket, you receive it via email so you can choose a convenient time and place to print it out.
+
+Also you may always find the link to the purchased ticket when logging in to your account.
+
+In order to print E - ticket out, you need to install Acrobat Reader on your computer.
+
+Each E - ticket contains a unique barcode, which guarantees the authenticity of your ticket and your right to attend the event.
+                </pre>
+                <hr class="dashed-line">
+                <h3 class="information-part-title">General Terms of Use</h3>
+                <pre class="info-text">
+These Terms of Use shall apply between the Company and the Buyer when purchasing tickets at WWW.TICKETCONCERT.CZ
+
+<b>1. Definitions</b>
+
+1.1. Luckystar, s.r.o. ICO 17865301, which mediates the conclusion of a ticket sale agreement between the Buyer and the Organizer.
+1.2. Buyer wishing to buy a ticket:
+(a) a natural adult who is not restricted by a valid court order;
+(b) minors, including those between the ages of 14 and 18, who need the consent of the guardian to enter into transactions, unless they decide on their own income;
+(c) a legal person represented by a legal representative;
+(d) any duly authorised representative of the above mentioned persons
+1.3. Organizer - a legal entity, the Ticket Seller, who organizes the Event and is responsible for the Ticket and for all rights and obligations to the Ticket Buyer related to the Event.
+1.4. Sales Contract - a contract concluded between the Buyer and the Organizer for the purchase of a Ticket through the TICKETCONCERT.CZ web site.
+1.5. Website - a ticketing environment produced and managed by TICKETCONCERT.CZ for an Event for the purchase of a Ticket organized by the Organizer.
+1.6. Ticket - a printed ticket or original electronic ticket, or a Ticket redeemed on the spot prior to the Event, which grants the visitor the right to participate in the Event.
+1.7. Event - An event organized by the Organizer for the public (concert, performance, sporting event, fair, etc.), which is organized by the Organizer and part of which requires the purchase of a Ticket.
+1.8. Personal Data - Information about any individual that can be used to identify a person, including information such as name, personal identification number, contact details
+
+
+<b>2. Buying a ticket</b>
+
+2.1. Luckystar,s.r.o. owns and operates a website through which the Buyer and the Organizer can enter into sales contracts with each other, ie. The Buyer may purchase the Ticket (s) to attend an event organized by the Organizer.
+2.2.The Luckystar,s.r.o. and the Organizer have entered into a contract for the mediation of sales of the Event Ticket (s) advertised on the WWW.TICKETCONCERT.CZ web site.
+2.3. As an intermediary, Luckystar,s.r.o. is not responsible for the content or obligations between the Organizer and the Purchaser.
+2.4. As an intermediary, Luckystar,s.r.o. it is not obliged to perform under the terms of the contract of sale.
+2.5. s an intermediary, Luckystar,s.r.o. is not in charge of redeeming or exchanging the Tickets. This can only be done by the Organizer.
+2.6. The terms and conditions of the Ticket Sales Contract s.h. The rights of the Purchaser and the obligations of the Organizer shall be determined by the Organizer, who has full responsibility for the event and is responsible for the compliance of the content of the Event with the advertising.
+2.7. The Sales Contract shall be deemed concluded between the Purchaser and the Operator upon receipt of the Ticket price on the Luckystar,s.r.o. account.
+2.8 .. After payment by the Buyer, the BUYER TICKET will forward the purchased ticket (s) to the email address entered by the Buyer.
+
+
+<b>3. Buyer Confirmations</b>
+
+3.1. Completing actions via WWW.TICKETCONCERT.CZ website, the Buyer confirms that he / she:
+3.1.1. Complies with the Buyer terms specified in clause 1.2 of the Purchase Ticket Terms of Use;
+3.1.2 has legal means to perform the transaction;
+3.1.3 undertakes to comply with these terms of use of the Website.
+3.1.4, when identifying themselves as a Loyal Customer when registering or purchasing a Ticket on the Luckystar,s.r.o. website, will provide the correct information (name, surname and contact details: telephone number and e-mail).
+3.1.5 keeps your username and password secure when registering as a Loyal Customer on the Website, preventing this information from being passed on to third parties.
+3.1.6 is aware that any transaction made by third parties on the Website using its Loyal Customer Account shall be deemed to be the person who has made the transaction and shall bear full responsibility for the obligations arising from such transaction.
+3.1.7. is aware that each Ticket purchased is unique and that the Ticket may not be copied or resold and that the QR Code of the Ticket entitles the holder to a single use of the Ticket.
+3. 1.8. is aware that it is responsible for the misuse of the ticket.
+3.1.9. is aware that the Organizer is responsible for the rights and obligations related to the Ticket.
+3.1.10. is aware that he has no right of withdrawal from the contract of sale with the Organizer pursuant to § 53 (4) 72) of the Law of Obligations Act
+
+
+<b>4. Buyer undertakes</b>
+
+4.1.In performing the operation and entering the data, carefully check the data provided by him / her and be responsible for the accuracy of the data provided, bearing the potential risk of his / her own mistake.
+4.2. In case tickets have not reached the buyer's e-mail address within three hours after purchase
+order and payment, the Purchaser must inform the Luckystar,s.r.o. by e-mail info@ticketconcert.cz
+4.3 not modify, copy, transmit, sell or reproduce the Ticket.
+4.4 not to damage the MIT online environment in any way
+In the event of such action, the Buyer shall bear full responsibility for any damage caused by its actions.
+
+
+<b>5. The buyer is entitled</b>
+
+5.1. From among the Events advertised on the Website to purchase tickets for the Event you like.
+5.2. Register as a regular customer on the Luckystar,s.r.o. website.
+5.3. Submit any questions, complaints, suggestions and requests related to the purchase of Tickets to the Luckystar,s.r.o. customer support e-mail support@ticketconcert.cz
+5.4. use the promotional code and any other benefits available on your Ticket purchase. In order to obtain the promotional code, the promoter will generate and issue other promotions or the Contractor's contract partner and make use of the MIT on the website. However, the Luckystar,s.r.o. does not control the eligibility for the discounted ticket or discount code when purchasing a Ticket (eg discount for students, pensioners). This will be checked at the venue. Misuse of the discount right entitles the Organizer not to allow the Ticket Holder to the Event.
+
+
+<b>6. MIT is entitled</b>
+
+6.1. unilaterally change the terms of use of the WWW.TICKETCONCERT.CZ web environment at any time. Changes to the Terms of Use shall take effect from the date of their publication on WWW.TICKETCONCERT.CZ
+6.2.to terminate the contract of sale, i.e. Purchase of a Ticket if the Luckystar,s.r.o. suspects that the Purchaser is acting in bad faith or unlawfully or that the Purchaser is acting as a person who does not comply with clause 1.2 of these Terms of Use. .
+6.3. to limit the number of tickets sold per Buyer on the Website according to the instructions given by the Organizer using the appropriate technical settings
+
+
+<b>7. Luckystar,s.r.o. is required</b>
+
+7.1. After the purchase, send the Buyer the Tickets he has purchased to the Buyer's e-mail.
+7.2. In the event of loss or forgetting of the password of the buyer loyal customer account, provide a secure password reset for loyal customer account recovery.
+
+
+<b>8. Luckystar,s.r.o. is not responsible</b>
+
+8.1. For possible interruptions in the operation of the services provided by third parties, which could result in a failure to transfer the money when purchasing the Ticket.
+8.2. For incorrect information provided by the buyer, including inaccurate billing account number or email address.
+8.3. For any damage caused by getting into the hands of third parties in the event of a ticket
+third-party access due to incorrect e-mail address entry or automatic due to redirects or incorrect customer account details.
+8.4. Loss, damage or loss of the Ticket delivered to the Buyer. Neither is the Purchase Ticket responsible for the loss / loss of a Ticket sent to an e-mail in the mailbox or for errors in printing the Ticket.
+8.5. The Organizer for any activity, including the reality and the advertising and content of the event, for replacement or cancellation of the Event. All claims arising from the Ticket will be settled by the organizer.
+8.6. On the website WWW.TICKETCONCERT.CZ for the information uploaded by the Organizer and the information obtained from the directions there.
+8.7. For the identity of the Buyer and the Ticket User and for any consequential damages.
+8.8 The liability of the Luckystar,s.r.o. in any case shall not exceed the cost of the Ticket paid by the Buyer.
+
+<b>9. Intellectual Property</b>
+
+9.1.Luckystar,s.r.o. owns all copyrights to the Website. The works on the Website, including the software used therein, texts, databases, graphic designs and color schemes, are also separately protected by copyright.
+9.2. Neither the Purchaser nor any other person shall have the right to do so without the prior written consent of PURCHASE You may not copy, distribute, distribute, distribute, transmit, translate, link to other databases, make extracts, etc. for use.
+9.3. Any use or reference by the Buyer or any other person of the Website or any of its works without the prior written consent of PURCHASE is unlawful and entails a liability and liability under law to compensate for the damage and loss of profit resulting from the illegal activity.
+
+
+<b>10. Privacy Policy and Processing of Personal Data</b>
+
+10.1 The Privacy Policy sets out the rules for storing, collecting and processing personal data when using the services of the website WWW.TICKETCONCERT.CZ to purchase a Ticket.
+10.2. This Privacy Policy is intended to provide security and personal data protection to Buyers in order to protect them from unauthorized use of their personal data.
+10.3 In carrying out the Privacy Policy, Luckystar,s.r.o., which is the Buyer's personal data processor, shall be governed by the Personal Data Protection Act and other laws of the Republic of Czech and the principles set out in the European Union General Data Protection Regulation.
+10.4. Luckystar,s.r.o. collects and processes the following Purchaser's personal information: first name and surname, e-mail address and telephone number and loyal customer name, which are used to identify the Purchaser and provided by the Purchaser when purchasing the Ticket or registering as a Loyal Customer.
+10.5 By purchasing the Ticket or registering as a Loyal Customer, the Buyer agrees that the Luckystar,s.r.o. may process the Buyer's personal data. The consent also includes the right of Luckystar,s.r.o. to transfer Buyer's personal information to companies belonging to the same group and, in case of change of ownership of Luckystar,s.r.o., to Luckystar,s.r.o. acquirer. Personal data will not be transferred to other persons.
+10.6. Luckystar,s.r.o. - has the right to process the Buyer's personal data without the Buyer's consent for the performance of the legal obligations and the contract entered into between the parties and, if necessary, to use them for the purpose of verifying the operations.
+10.7. Luckystar,s.r.o. processes the Buyer's personal data to the minimum extent possible, solely for the service
+(exchange of a ticket purchase, distribution of a newsletter, creation of a payment option) and as long as necessary for the purposes of processing personal data. Purchase Ticket has the right to retain the Buyer's personal data until the deadline for filing claims.
+10.8. Luckystar,s.r.o. guarantees the confidentiality of the Buyer's personal data and the lawfulness of their processing.
+10.9. Luckystar,s.r.o. has the right to withdraw, request at any time the consent given for the processing of personal data
+the termination of the processing of personal data and the deletion or closure of personal data collected, as well as the closure of a loyal customer account.
+
+
+<b>11. Service Fees</b>
+
+11.1 For each Ticket purchased through the WWW.TICKETCONCERT.CZ website, a service fee of CZK 30,- shall be added to the purchase of the Ticket. In special cases, other fees may be added to the price of the Ticket and the Service Fee, which may be added by the Organizer to the performance of the Event as agreed between him and a third party. In addition, the Organizer may offer optional amenities, such as event catering, parking near the event, etc., which the Buyer is not obliged to purchase if he does not wish to use the services. In case of cancellation, postponement, or for any other reason interfering with the holding of the event, the service fee for the TICKETCONCERT.CZ website is not refundable, since the service for purchasing tickets to the Client was provided. The amount of the ticket itself, excluding the service fee, the Client has the right to demand only from the Organizer.
+
+
+<b>12. Other provisions relating to the terms of use of the BUYING TICKET</b>
+
+12.1. The Terms of Use shall enter into force between the Luckystar,s.r.o. and the Buyer from the moment the Buyer gives their respective electronic confirmation of their acceptance of these Terms of Use either when purchasing the Ticket or upon registration as a Loyal Customer.
+12.2. The terms and conditions of use of the Luckystar,s.r.o. can be changed by publishing the relevant information on the website. The changes will take effect upon publication on the website.
+12.3. If any provision of the Terms of Use conflicts with legal requirements, the remainder shall not affect the validity or applicability of the Terms of Use. If any provision of the Terms of Use is legally void for a Buyer who is a consumer, then it shall apply to a Buyer who is not a consumer (legal entity)
+12.4. The legislation of the Republic of Latvia applies to the legal relationship between Luckystar,s.r.o. and the Buyer arising from the use of the website. Possible disputes arising between the Parties when purchasing Tickets on the website www.ticketconcert.cz shall be resolved through negotiations, and if an agreement cannot be reached, then if the Buyer is a legal entity, Any dispute, disagreement or claim arising from this agreement, that affect it or its violation, termination or invalidity will be resolved in the Prague Arbitration Court, registration number: 05953413, in written process, as part of one arbitrator and in accordance with the rules of this arbitration court, and for Buyers of other types the jurisdiction is determined in in accordance with the provisions of the law.
+The buyer, who is a consumer, has the right to lodge a complaint with the Consumer Dispute Committee, information about which can be found on the home page of the Consumer Rights Protection Board, or file a complaint via the Internet in an electronic environment, open to all consumers of the European Union through which complaints related to online sellers can be resolved. The environment facilitates the resolution of disputes related to both domestic and international transactions. The environment is called the ODR platform (Online Dispute Resolution, or Internet Dispute Resolution), and it is available at https://ec.europa.eu/consumers/odr/.
+12.5 These Terms of Use of MIT Website WWW.TICKETCONCERT.CZ have been approved by a resolution of the Management Board of Luckystar,s.r.o. and are valid until renewed on the Website.
+                </pre>
+                <hr class="dashed-line">
+                <h3 class="information-part-title">How to buy a ticket</h3>
+                <pre class="info-text">
+<b>How to purchase a ticket via TICKETCONCERT.CZ</b>
+
+
+1. Visit our website <b>TICKETCONCERT.CZ</b>
+
+2. Choose the event
+
+3. Select ''buy ticket'', which will redirect you to the page, where you will be able to choose the preferred seats.
+<b>Warning! Night club events as regular do not guarantee any fixed seats, either standard ticket or VIP section.</b>
+
+4. Please <b>choose your seats. In case of night club event, please choose the amount of tickets</b>
+
+5. Please click on <b>''Buy ticket''</b>
+
+6. Please choose authorisation method : <b>Already registered user, Register</b> as a new user or <b>proceed without registering</b>
+
+7. Choose Registration method and proceed Next
+
+8. Choose payment method: <b>Bank</b> or <b>Credit card </b> payment
+
+9. Proceed with the purchase
+
+10. After your payment has been successfully submitted, you will receive an <b>electronic ticket</b> (PDF) to your e-mail address for printing out.
+
+11. You can also print tickets from your account by logging in using your personal login and password <b>(do not pass your login and password to third parties).</b>
+
+If you have any questions, do not hesitate to contact us back via feedback form.
+                </pre>
+                <hr class="dashed-line">
+                <h3 class="information-part-title">Payment method</h3>
+                <pre class="info-text">The list of all currently available payment methods</pre>
+                <hr class="dashed-line">
+                <h3 class="information-part-title">Privacy Policy</h3>
+                <pre class="info-text">
+Luckystar,s.r.o. privacy policy regarding the use of personal data
+
+<b>INFORMATION ON USING US COOKIES-FILES</b>
+Our site uses cookies to distinguish you from other users of our resource. This allows us to provide a convenient view of our site, and also provides an opportunity to improve it. In order to continue working with the Site, you must accept the use of cookies.
+
+Cookies are small files consisting of letters and numbers that are stored by your browser on the hard drive of your computer if you agree to their use.
+
+<b>We use the following cookies:</b>
+
+<b>Extremely required cookies.</b>These are the files necessary for the correct operation of our Site. These include, for example, cookies, which allow you to enter the protected zones of our Site, add goods (ticket for the event) to the basket or use the electronic payment system.
+
+<b>Analytical / technical cookies.</b> They allow us to estimate and count the number of visitors, and also to understand how they move around the Site while working with it. This helps us make improvements to the site, for example, by optimizing the search for preferred activities, making it simple and effective.
+
+<b>Functional cookies.</b> These files are needed to recognize you when you visit our website again. This allows us to personalize the content of the Site for your needs, welcome you by name and remember your preferences (for example, your choice of event category).
+
+<b>Target cookies.</b> These cookies register your visits to the Site, remember the pages you visited and the links you used to go through. We use this information to ensure that our website and the ads displayed on it are as accurate as possible to your interests. We can also transfer this information to third parties for this purpose.
+                </pre>
+            </div>
+            <div class="info-part" *ngIf="eTicketInfo">
+                <h3 class="information-part-title">E - ticket</h3>
+                <pre class="info-text">
+The electronic ticket <b>(E - ticket)</b> is a convenient way to make a purchase anywhere you have internet access.
+
+<b>You print E - ticket out by yourself.</b> In case you don’t have immediate printer access when you purchase the ticket, you receive it via email so you can choose a convenient time and place to print it out.
+
+Also you may always find the link to the purchased ticket when logging in to your account.
+
+In order to print E - ticket out, you need to install Acrobat Reader on your computer.
+
+Each E - ticket contains a unique barcode, which guarantees the authenticity of your ticket and your right to attend the event.
+                </pre>
+            </div>
+            <div class="info-part" *ngIf="generaltermsInfo">
+                <h3 class="information-part-title">General Terms of Use</h3>
+                <pre class="info-text">
+These Terms of Use shall apply between the Company and the Buyer when purchasing tickets at WWW.TICKETCONCERT.CZ
+
+<b>1. Definitions</b>
+
+1.1. Luckystar, s.r.o. ICO 17865301, which mediates the conclusion of a ticket sale agreement between the Buyer and the Organizer.
+1.2. Buyer wishing to buy a ticket:
+(a) a natural adult who is not restricted by a valid court order;
+(b) minors, including those between the ages of 14 and 18, who need the consent of the guardian to enter into transactions, unless they decide on their own income;
+(c) a legal person represented by a legal representative;
+(d) any duly authorised representative of the above mentioned persons
+1.3. Organizer - a legal entity, the Ticket Seller, who organizes the Event and is responsible for the Ticket and for all rights and obligations to the Ticket Buyer related to the Event.
+1.4. Sales Contract - a contract concluded between the Buyer and the Organizer for the purchase of a Ticket through the TICKETCONCERT.CZ web site.
+1.5. Website - a ticketing environment produced and managed by TICKETCONCERT.CZ for an Event for the purchase of a Ticket organized by the Organizer.
+1.6. Ticket - a printed ticket or original electronic ticket, or a Ticket redeemed on the spot prior to the Event, which grants the visitor the right to participate in the Event.
+1.7. Event - An event organized by the Organizer for the public (concert, performance, sporting event, fair, etc.), which is organized by the Organizer and part of which requires the purchase of a Ticket.
+1.8. Personal Data - Information about any individual that can be used to identify a person, including information such as name, personal identification number, contact details
+
+
+<b>2. Buying a ticket</b>
+
+2.1. Luckystar,s.r.o. owns and operates a website through which the Buyer and the Organizer can enter into sales contracts with each other, ie. The Buyer may purchase the Ticket (s) to attend an event organized by the Organizer.
+2.2.The Luckystar,s.r.o. and the Organizer have entered into a contract for the mediation of sales of the Event Ticket (s) advertised on the WWW.TICKETCONCERT.CZ web site.
+2.3. As an intermediary, Luckystar,s.r.o. is not responsible for the content or obligations between the Organizer and the Purchaser.
+2.4. As an intermediary, Luckystar,s.r.o. it is not obliged to perform under the terms of the contract of sale.
+2.5. s an intermediary, Luckystar,s.r.o. is not in charge of redeeming or exchanging the Tickets. This can only be done by the Organizer.
+2.6. The terms and conditions of the Ticket Sales Contract s.h. The rights of the Purchaser and the obligations of the Organizer shall be determined by the Organizer, who has full responsibility for the event and is responsible for the compliance of the content of the Event with the advertising.
+2.7. The Sales Contract shall be deemed concluded between the Purchaser and the Operator upon receipt of the Ticket price on the Luckystar,s.r.o. account.
+2.8 .. After payment by the Buyer, the BUYER TICKET will forward the purchased ticket (s) to the email address entered by the Buyer.
+
+
+<b>3. Buyer Confirmations</b>
+
+3.1. Completing actions via WWW.TICKETCONCERT.CZ website, the Buyer confirms that he / she:
+3.1.1. Complies with the Buyer terms specified in clause 1.2 of the Purchase Ticket Terms of Use;
+3.1.2 has legal means to perform the transaction;
+3.1.3 undertakes to comply with these terms of use of the Website.
+3.1.4, when identifying themselves as a Loyal Customer when registering or purchasing a Ticket on the Luckystar,s.r.o. website, will provide the correct information (name, surname and contact details: telephone number and e-mail).
+3.1.5 keeps your username and password secure when registering as a Loyal Customer on the Website, preventing this information from being passed on to third parties.
+3.1.6 is aware that any transaction made by third parties on the Website using its Loyal Customer Account shall be deemed to be the person who has made the transaction and shall bear full responsibility for the obligations arising from such transaction.
+3.1.7. is aware that each Ticket purchased is unique and that the Ticket may not be copied or resold and that the QR Code of the Ticket entitles the holder to a single use of the Ticket.
+3. 1.8. is aware that it is responsible for the misuse of the ticket.
+3.1.9. is aware that the Organizer is responsible for the rights and obligations related to the Ticket.
+3.1.10. is aware that he has no right of withdrawal from the contract of sale with the Organizer pursuant to § 53 (4) 72) of the Law of Obligations Act
+
+
+<b>4. Buyer undertakes</b>
+
+4.1.In performing the operation and entering the data, carefully check the data provided by him / her and be responsible for the accuracy of the data provided, bearing the potential risk of his / her own mistake.
+4.2. In case tickets have not reached the buyer's e-mail address within three hours after purchase
+order and payment, the Purchaser must inform the Luckystar,s.r.o. by e-mail info@ticketconcert.cz
+4.3 not modify, copy, transmit, sell or reproduce the Ticket.
+4.4 not to damage the MIT online environment in any way
+In the event of such action, the Buyer shall bear full responsibility for any damage caused by its actions.
+
+
+<b>5. The buyer is entitled</b>
+
+5.1. From among the Events advertised on the Website to purchase tickets for the Event you like.
+5.2. Register as a regular customer on the Luckystar,s.r.o. website.
+5.3. Submit any questions, complaints, suggestions and requests related to the purchase of Tickets to the Luckystar,s.r.o. customer support e-mail support@ticketconcert.cz
+5.4. use the promotional code and any other benefits available on your Ticket purchase. In order to obtain the promotional code, the promoter will generate and issue other promotions or the Contractor's contract partner and make use of the MIT on the website. However, the Luckystar,s.r.o. does not control the eligibility for the discounted ticket or discount code when purchasing a Ticket (eg discount for students, pensioners). This will be checked at the venue. Misuse of the discount right entitles the Organizer not to allow the Ticket Holder to the Event.
+
+
+<b>6. MIT is entitled</b>
+
+6.1. unilaterally change the terms of use of the WWW.TICKETCONCERT.CZ web environment at any time. Changes to the Terms of Use shall take effect from the date of their publication on WWW.TICKETCONCERT.CZ
+6.2.to terminate the contract of sale, i.e. Purchase of a Ticket if the Luckystar,s.r.o. suspects that the Purchaser is acting in bad faith or unlawfully or that the Purchaser is acting as a person who does not comply with clause 1.2 of these Terms of Use. .
+6.3. to limit the number of tickets sold per Buyer on the Website according to the instructions given by the Organizer using the appropriate technical settings
+
+
+<b>7. Luckystar,s.r.o. is required</b>
+
+7.1. After the purchase, send the Buyer the Tickets he has purchased to the Buyer's e-mail.
+7.2. In the event of loss or forgetting of the password of the buyer loyal customer account, provide a secure password reset for loyal customer account recovery.
+
+
+<b>8. Luckystar,s.r.o. is not responsible</b>
+
+8.1. For possible interruptions in the operation of the services provided by third parties, which could result in a failure to transfer the money when purchasing the Ticket.
+8.2. For incorrect information provided by the buyer, including inaccurate billing account number or email address.
+8.3. For any damage caused by getting into the hands of third parties in the event of a ticket
+third-party access due to incorrect e-mail address entry or automatic due to redirects or incorrect customer account details.
+8.4. Loss, damage or loss of the Ticket delivered to the Buyer. Neither is the Purchase Ticket responsible for the loss / loss of a Ticket sent to an e-mail in the mailbox or for errors in printing the Ticket.
+8.5. The Organizer for any activity, including the reality and the advertising and content of the event, for replacement or cancellation of the Event. All claims arising from the Ticket will be settled by the organizer.
+8.6. On the website WWW.TICKETCONCERT.CZ for the information uploaded by the Organizer and the information obtained from the directions there.
+8.7. For the identity of the Buyer and the Ticket User and for any consequential damages.
+8.8 The liability of the Luckystar,s.r.o. in any case shall not exceed the cost of the Ticket paid by the Buyer.
+
+<b>9. Intellectual Property</b>
+
+9.1.Luckystar,s.r.o. owns all copyrights to the Website. The works on the Website, including the software used therein, texts, databases, graphic designs and color schemes, are also separately protected by copyright.
+9.2. Neither the Purchaser nor any other person shall have the right to do so without the prior written consent of PURCHASE You may not copy, distribute, distribute, distribute, transmit, translate, link to other databases, make extracts, etc. for use.
+9.3. Any use or reference by the Buyer or any other person of the Website or any of its works without the prior written consent of PURCHASE is unlawful and entails a liability and liability under law to compensate for the damage and loss of profit resulting from the illegal activity.
+
+
+<b>10. Privacy Policy and Processing of Personal Data</b>
+
+10.1 The Privacy Policy sets out the rules for storing, collecting and processing personal data when using the services of the website WWW.TICKETCONCERT.CZ to purchase a Ticket.
+10.2. This Privacy Policy is intended to provide security and personal data protection to Buyers in order to protect them from unauthorized use of their personal data.
+10.3 In carrying out the Privacy Policy, Luckystar,s.r.o., which is the Buyer's personal data processor, shall be governed by the Personal Data Protection Act and other laws of the Republic of Czech and the principles set out in the European Union General Data Protection Regulation.
+10.4. Luckystar,s.r.o. collects and processes the following Purchaser's personal information: first name and surname, e-mail address and telephone number and loyal customer name, which are used to identify the Purchaser and provided by the Purchaser when purchasing the Ticket or registering as a Loyal Customer.
+10.5 By purchasing the Ticket or registering as a Loyal Customer, the Buyer agrees that the Luckystar,s.r.o. may process the Buyer's personal data. The consent also includes the right of Luckystar,s.r.o. to transfer Buyer's personal information to companies belonging to the same group and, in case of change of ownership of Luckystar,s.r.o., to Luckystar,s.r.o. acquirer. Personal data will not be transferred to other persons.
+10.6. Luckystar,s.r.o. - has the right to process the Buyer's personal data without the Buyer's consent for the performance of the legal obligations and the contract entered into between the parties and, if necessary, to use them for the purpose of verifying the operations.
+10.7. Luckystar,s.r.o. processes the Buyer's personal data to the minimum extent possible, solely for the service
+(exchange of a ticket purchase, distribution of a newsletter, creation of a payment option) and as long as necessary for the purposes of processing personal data. Purchase Ticket has the right to retain the Buyer's personal data until the deadline for filing claims.
+10.8. Luckystar,s.r.o. guarantees the confidentiality of the Buyer's personal data and the lawfulness of their processing.
+10.9. Luckystar,s.r.o. has the right to withdraw, request at any time the consent given for the processing of personal data
+the termination of the processing of personal data and the deletion or closure of personal data collected, as well as the closure of a loyal customer account.
+
+
+<b>11. Service Fees</b>
+
+11.1 For each Ticket purchased through the WWW.TICKETCONCERT.CZ website, a service fee of CZK 30,- shall be added to the purchase of the Ticket. In special cases, other fees may be added to the price of the Ticket and the Service Fee, which may be added by the Organizer to the performance of the Event as agreed between him and a third party. In addition, the Organizer may offer optional amenities, such as event catering, parking near the event, etc., which the Buyer is not obliged to purchase if he does not wish to use the services. In case of cancellation, postponement, or for any other reason interfering with the holding of the event, the service fee for the TICKETCONCERT.CZ website is not refundable, since the service for purchasing tickets to the Client was provided. The amount of the ticket itself, excluding the service fee, the Client has the right to demand only from the Organizer.
+
+
+<b>12. Other provisions relating to the terms of use of the BUYING TICKET</b>
+
+12.1. The Terms of Use shall enter into force between the Luckystar,s.r.o. and the Buyer from the moment the Buyer gives their respective electronic confirmation of their acceptance of these Terms of Use either when purchasing the Ticket or upon registration as a Loyal Customer.
+12.2. The terms and conditions of use of the Luckystar,s.r.o. can be changed by publishing the relevant information on the website. The changes will take effect upon publication on the website.
+12.3. If any provision of the Terms of Use conflicts with legal requirements, the remainder shall not affect the validity or applicability of the Terms of Use. If any provision of the Terms of Use is legally void for a Buyer who is a consumer, then it shall apply to a Buyer who is not a consumer (legal entity)
+12.4. The legislation of the Republic of Latvia applies to the legal relationship between Luckystar,s.r.o. and the Buyer arising from the use of the website. Possible disputes arising between the Parties when purchasing Tickets on the website www.ticketconcert.cz shall be resolved through negotiations, and if an agreement cannot be reached, then if the Buyer is a legal entity, Any dispute, disagreement or claim arising from this agreement, that affect it or its violation, termination or invalidity will be resolved in the Prague Arbitration Court, registration number: 05953413, in written process, as part of one arbitrator and in accordance with the rules of this arbitration court, and for Buyers of other types the jurisdiction is determined in in accordance with the provisions of the law.
+The buyer, who is a consumer, has the right to lodge a complaint with the Consumer Dispute Committee, information about which can be found on the home page of the Consumer Rights Protection Board, or file a complaint via the Internet in an electronic environment, open to all consumers of the European Union through which complaints related to online sellers can be resolved. The environment facilitates the resolution of disputes related to both domestic and international transactions. The environment is called the ODR platform (Online Dispute Resolution, or Internet Dispute Resolution), and it is available at https://ec.europa.eu/consumers/odr/.
+12.5 These Terms of Use of MIT Website WWW.TICKETCONCERT.CZ have been approved by a resolution of the Management Board of Luckystar,s.r.o. and are valid until renewed on the Website.
+                </pre>
+            </div>
+            <div class="info-part" *ngIf="buyTicketInfo">
+                <h3 class="information-part-title">How to buy a ticket</h3>
+                <pre class="info-text">
+<b>How to purchase a ticket via TICKETCONCERT.CZ</b>
+
+1. Visit our website <b>TICKETCONCERT.CZ</b>
+
+2. Choose the event
+
+3. Select ''buy ticket'', which will redirect you to the page, where you will be able to choose the preferred seats.
+<b>Warning! Night club events as regular do not guarantee any fixed seats, either standard ticket or VIP section.</b>
+
+4. Please <b>choose your seats. In case of night club event, please choose the amount of tickets</b>
+
+5. Please click on <b>''Buy ticket''</b>
+
+6. Please choose authorisation method : <b>Already registered user, Register</b> as a new user or <b>proceed without registering</b>
+
+7. Choose Registration method and proceed Next
+
+8. Choose payment method: <b>Bank</b> or <b>Credit card </b> payment
+
+9. Proceed with the purchase
+
+10. After your payment has been successfully submitted, you will receive an <b>electronic ticket</b> (PDF) to your e-mail address for printing out.
+
+11. You can also print tickets from your account by logging in using your personal login and password <b>(do not pass your login and password to third parties).</b>
+
+If you have any questions, do not hesitate to contact us back via feedback form.
+                </pre>
+            </div>
+            <div class="info-part" *ngIf="paymentInfo">
+                <h3 class="information-part-title">Payment method</h3>
+                <pre class="info-text">The list of all currently available payment methods</pre>
+            </div>
+            <div class="info-part" *ngIf="privacypolicyInfo">
+                <h3 class="information-part-title">Privacy Policy</h3>
+                <pre class="info-text">
+Luckystar,s.r.o. privacy policy regarding the use of personal data
+
+<b>INFORMATION ON USING US COOKIES-FILES</b>
+Our site uses cookies to distinguish you from other users of our resource. This allows us to provide a convenient view of our site, and also provides an opportunity to improve it. In order to continue working with the Site, you must accept the use of cookies.
+
+Cookies are small files consisting of letters and numbers that are stored by your browser on the hard drive of your computer if you agree to their use.
+
+<b>We use the following cookies:</b>
+
+<b>Extremely required cookies.</b>These are the files necessary for the correct operation of our Site. These include, for example, cookies, which allow you to enter the protected zones of our Site, add goods (ticket for the event) to the basket or use the electronic payment system.
+
+<b>Analytical / technical cookies.</b> They allow us to estimate and count the number of visitors, and also to understand how they move around the Site while working with it. This helps us make improvements to the site, for example, by optimizing the search for preferred activities, making it simple and effective.
+
+<b>Functional cookies.</b> These files are needed to recognize you when you visit our website again. This allows us to personalize the content of the Site for your needs, welcome you by name and remember your preferences (for example, your choice of event category).
+
+<b>Target cookies.</b> These cookies register your visits to the Site, remember the pages you visited and the links you used to go through. We use this information to ensure that our website and the ads displayed on it are as accurate as possible to your interests. We can also transfer this information to third parties for this purpose.
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<app-contact-form></app-contact-form>

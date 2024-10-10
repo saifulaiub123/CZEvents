@@ -1,0 +1,307 @@
+.maindiv{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #F1F6F7;
+}
+.PayBox{
+    width: 50%;
+    height: 50vh;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.leftSide{
+    width: 50%;
+    height: 100%;
+}
+.rightSide{
+    width: 50%;
+    height: 100%;
+    background-color: white;
+}
+.TopPart{
+    height: 60%;
+    background-color: #72ECF4;
+}
+.BottomPart{
+    height: 40%;
+    background-color: #17C9D5;
+    overflow: hidden;
+}
+.logo{
+    width: 300px;
+    height: auto;
+    margin-left: 20%;
+    margin-top: 85px;
+}
+.amount{
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 5%;
+    border: 2px solid white;
+    margin-top: 80px;
+}
+.AmountText{
+    font-family: sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+.PaymentData{
+    margin-top: 45px;
+}
+.PaymentData input::placeholder{
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 0 5px 0 12px;
+}
+#KData, #cardnumber{
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    border: 0.5px solid lightgray;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+.CData{
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 81%;
+}
+.CData input{
+    height: 40px;
+    width: 47%;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 0.5px solid lightgray;
+ 
+}
+
+.paymentButton{
+    width: 80%;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background-color: #72ECF4;
+    margin-top: 23px;
+    margin-left: 10%;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+}
+.alertBox {
+    width: 260px;
+    height: auto;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.alertBox.show {
+    opacity: 1;
+}
+
+.alertBox > div {
+    margin-top: 5.5px;
+    width: 280px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.alertBox > div > p {
+    margin-top: 60px;
+    font-size: 17px;
+}
+.loader-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: #ff4d4d; /* Red color */
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+    margin-top: 15%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+
+.message {
+    width: 350px;
+    height: 450px;
+    border-radius: 10px;
+    border: 1px solid red;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black; /* Red color */
+    margin-top: 20px;
+    position: relative;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+.textMsg{
+    text-align: center;
+}
+.insideMessageDiv{
+    margin-top: 70px;
+}
+.Rejection {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+}
+.RejProvokingMessage{
+    width: 90%;
+    height: 120px;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-top: 50px;
+    background-color: #FCE8E9;
+    overflow: hidden;
+}
+#RejProvokingMessageText{
+    width: 90%;
+    text-align: left;
+    margin-left: 5%;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #AF4044;
+    font-weight: lighter;
+    margin-top: 35px;
+}
+#Icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 35px;
+    margin-top: 10px; /* Adjusted margin to position icon on the left */
+}
+@media screen and (max-width: 768px) {
+    .maindiv{
+        height: 100vh;
+    }
+    .PayBox{
+        width: 90%;
+        height: auto;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10vh;
+        display: block;
+        align-items: center;
+        overflow: hidden;
+    }
+    .leftSide{
+        width: 100%;
+        height: 50%;
+    }
+    .rightSide{
+        width: 100%;
+        height: auto;
+        background-color: white;
+        overflow: hidden;
+    }
+    .TopPart{
+        height: 50%;
+        background-color: #72ECF4;
+    }
+    .BottomPart{
+        height: 50%;
+        background-color: #17C9D5;
+        overflow: hidden;
+    }
+    .logo{
+        width: 300px;
+        height: auto;
+        margin-left: 10%;
+        margin-top: 35px;
+    }
+    .amount{
+        width: 90%;
+        height: 40px;
+        border-radius: 10px;
+        margin-left: 5%;
+        border: 2px solid white;
+        margin-top: 100px;
+        margin-bottom: 30px;
+    }
+    .AmountText{
+        font-family: sans-serif;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .PaymentData{
+        margin-top: 45px;
+    }
+    .PaymentData input::placeholder{
+        font-family: sans-serif;
+        font-size: 17px;
+        padding: 0 5px 0 12px;
+    }
+    #KData, #cardnumber{
+        width: 80%;
+        height: 40px;
+        border-radius: 10px;
+        border: 0.5px solid lightgray;
+        margin-top: 20px;
+        margin-left: 10%;
+    }
+    .CData{
+        margin-left: 10%;
+    }
+    .CData input{
+        height: 40px;
+        width: 45%;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: 0.5px solid lightgray;
+        font-size: 14px;
+    }
+    
+    .paymentButton{
+        width: 80%;
+        height: 45px;
+        border-radius: 10px;
+        border: none;
+        background-color: #72ECF4;
+        margin-top: 30px;
+        margin-left: 10%;
+        cursor: pointer;
+        font-size: 18px;
+        color: white;
+        margin-bottom: 30px;
+    }
+}

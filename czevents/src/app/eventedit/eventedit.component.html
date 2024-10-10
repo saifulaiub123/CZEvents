@@ -1,0 +1,89 @@
+<div class="navbar">
+   <ul>
+       <li><a routerLink="/Admin" >Admin Panel</a></li>
+       <li><a href="#" routerLink="/EditSlides">Edit Banners</a></li>
+       <li><a href="#" class="logout" (click)="logOut()">Logout</a></li>
+   </ul>
+</div>
+
+<div class="MainDiv">
+     <div class="MainDivConstruct">
+          <div class="EventBoxes">
+               <div class="EventBoxLeftSide">
+                    <div class="LeftSideDescriptionBox">
+                        <form #myForm (ngSubmit)="updateEvent()">
+                        <div class="LeftSideDescriptionBoxItems">
+                            <div style="display: block;">
+                                <div>
+                                    <img src="{{Event.photo}}" style="width: 236px;height: 342px;"/>
+                                </div>
+                                <input type="file" style="margin-top: 10px;" name="Photo"/>
+                                <button class="dbtn" (click)="confirmDelete()">DELETE EVENT</button>
+                            </div>
+                            <div class="LeftSideDescriptionBoxItemsText">
+                                    <input value="{{Event.name}}" placeholder="Event name" name="Name"/>
+                                 <div class="EventTag">
+                                    <input value="{{Event.date}}" placeholder="Event date" name="Date"/>
+                                 </div>
+                                 <div class="EventTag">
+                                    <input value="{{Event.location}}" placeholder="Event location" name="Location"/>
+                                 </div>
+                                 <div class="EventTag">
+                                    <input value="{{Event.link}}" name="Link"/>
+                                 </div>
+                                 <div class="EventTag">
+                                    <input value="{{Event.price}}" name="Price" placeholder="Event Price"/>
+                                 </div>
+                                 <div class="EventTag">
+                                    <textarea value="{{Event.description}}" placeholder="Event Description" name="Description" style="height: 200px;"></textarea>
+                                 </div>
+                                 <div class="EventTag">
+                                    <input value="{{Event.organizerName}}" placeholder="Organizer name" name="OrganizerName"/>
+                                 </div>
+                                 <div class="EventTag">
+                                    <select name="Type" [(ngModel)]="selectedType" required>
+                                        <option [defaultSelected]="Event.type"></option>
+                                        <option value="" disabled selected>Select a Type</option>
+                                        <option value="GALLERY">GALLERY</option>
+                                        <option value="THEATER">THEATER</option>
+                                        <option value="SPORT">SPORT</option>
+                                        <option value="LEISURE">LEISURE</option>
+                                        <option value="SHOW">SHOW</option>
+                                        <option value="PARTY">PARTY</option>
+                                        <option value="FESTIVAL">FESTIVAL</option>
+                                        <option value="SEMINAR">SEMINAR</option>
+                                    </select>
+                                 </div>
+                                 <div class="EventTag">
+                                    <select name="Country" [(ngModel)]="selectedCountry" required>
+                                      <option value="" disabled>Select a country</option>
+                                      <option value="AUSTRIA">AUSTRIA</option>
+                                      <option value="CZECHIA">CZECHIA</option>
+                                      <option value="HUNGARY">HUNGARY</option>
+                                      <option value="SLOVAKIA">SLOVAKIA</option>
+                                      <option value="POLAND">POLAND</option>
+                                      <option value="GERMANY">GERMANY</option>
+                                    </select>
+                                  </div>
+                                 <div class="EventTag">
+                                    <input value="{{Event.organizerEmail}}" placeholder="Organizer email" name="OrganizerEmail"/>
+                                 </div>
+                                 <div class="EventTag">
+                                    <input value="{{Event.organizerNumber}}" placeholder="Organizer phone" name="OrganizerNumber"/>
+                                 </div>  
+                                 <div class="EventTag">
+                                    <button type="submit" class="SBM">Submit</button>
+                                 </div>                  
+                            </div>
+                        </div>
+                        <div class="LeftSideDescriptionBoxText">
+                            
+                        </div>
+                        </form>
+                    </div>
+               </div>
+               <div class="EventBoxRightSide">
+               </div>
+          </div>
+     </div>
+</div>

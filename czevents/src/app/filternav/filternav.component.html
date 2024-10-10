@@ -1,0 +1,78 @@
+<div class="FilterNavbar">
+    <div class="HideFilter">
+        <label class="switch">
+            <input type="checkbox" id="toggleFilter" (change)="toggleFilters($event)" checked>
+            <span class="slider round"></span>
+        </label>
+        <h3>Hide Filter</h3>
+    </div>
+    <div class="Filters" [ngClass]="{'hide': hideFilters}">
+      <div class="City">
+        <h3>City</h3>
+        <div class="width-limit-div">
+         <select>
+             <option>Prague</option>
+             <option>Havlíčkův Brod</option>
+             <option>Jihlava</option>
+             <option>Karlovy Vary</option>
+             <option>Liberec</option>
+             <option>Ostrava</option>
+             <option>Znojmo</option>
+             <option>Třebíč</option>
+             <option>Tábor</option>
+             <option>Pelhřimov</option>
+             <option>Plzen</option>
+           </select>
+        </div>
+     </div>
+     <hr class="dashed-line">
+     <div class="date-filter">
+         <h3>Select period:</h3>
+        <app-date-range></app-date-range> 
+     </div>
+     <hr class="dashed-line">
+     <div class="price-filter">
+         <h3>Price range:</h3>
+         <div class="custom-slider">
+             <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" id="Slider"></ngx-slider>
+         </div>
+     </div>
+     <hr class="dashed-line">
+     <div class="Category">
+         <h3>Category:</h3>
+         <label class="container">MUSIC
+             <input type="checkbox">
+             <span class="checkmark"></span>
+           </label>
+           <label class="container">THEATER
+             <input type="checkbox">
+             <span class="checkmark"></span>
+           </label>
+           <label class="container">SPORT
+             <input type="checkbox">
+             <span class="checkmark"></span>
+           </label>
+           <label class="container">FESTIVAL
+             <input type="checkbox">
+             <span class="checkmark"></span>
+           </label>
+           <label class="container">SPORT
+             <input type="checkbox">
+             <span class="checkmark"></span>
+           </label>
+           <label class="container">LEISURE
+             <input type="checkbox">
+             <span class="checkmark"></span>
+           </label>
+           <label class="container">SHOW
+             <input type="checkbox">
+             <span class="checkmark"></span>
+           </label>
+           <label class="container">SEMINARS
+             <input type="checkbox">
+             <span class="checkmark"></span>
+           </label>
+           
+     </div>
+    </div>
+</div>

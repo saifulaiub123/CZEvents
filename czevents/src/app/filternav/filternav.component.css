@@ -1,0 +1,238 @@
+.FilterNavbar{
+    width: auto;
+    height: auto;
+    background-color: #FBFBFB;
+}
+.HideFilter{
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    width: 135px;
+    margin-top: 20px;
+}
+.Filters{
+  width: 400px;
+}
+.HideFilter h3{
+    font-size: 15px;
+    margin-left: 10px;
+    color: #183765;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28.3333px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 0px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .City{
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #183765;
+  }
+  .City select{
+    border: 1px solid lightgray;
+  }
+
+.parent-element {
+    transform: none !important;
+}
+
+:host {
+    display: block;
+    position: relative;
+}
+.width-limit-div{
+    width: 180px;
+}
+select {
+    width: 100%;
+    max-width: 100%;
+    font-size: 17px;
+    height: 30px;
+    border: 1px lightgrey;
+    z-index: 1; /* Ensure it appears above other elements */
+    position: relative; /* Make sure position is relative */
+    outline: 0;
+    color: #183765;
+
+}
+
+.dropdown-container {
+    position: relative;
+    overflow: visible; /* Ensure the dropdown is not cut off */
+}
+
+.dashed-line {
+    width: 180px;
+    border: none; /* Remove default border */
+    border-top: 1.5px dashed lightgrey; /* Create a dashed line */
+    margin: 20px 0; /* Optional: Adjust the spacing around the line */
+    margin-top: 30px;
+}
+
+.date-filter{
+    margin-top: 30px;
+}
+.date-filter h3{
+   font-size: 18px;
+   font-family: sans-serif;
+   color: #183765;
+}
+.custom-slider .ngx-slider .ngx-slider-pointer {
+  width: 17px;
+  height: 20px;
+  top: auto; /* to remove the default positioning */
+  bottom: 0;
+  background-color: #333;
+  border-radius: 50%;
+}
+.price-filter{
+  margin-top: 30px;
+}
+.price-filter h3{
+  font-size: 18px;
+  color: #183765;
+  font-family: sans-serif;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #183765;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: sans-serif;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #FD8626;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.Category h3{
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #183765;
+}
+.Category{
+  margin-top: 30px;
+}
+.hide {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .Filters{
+      margin-left: 22.5%;
+  }
+  .HideFilter{
+    margin-left: 5%;
+  }
+
+}
