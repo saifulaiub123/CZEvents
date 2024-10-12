@@ -13,7 +13,7 @@ interface Slides{
 })
 
 export class SlidesComponent implements OnInit{
-  slides: any;
+  slides: any= [];
   fullsides: any;
 
   currentSlideIndex = 0;
@@ -62,9 +62,9 @@ export class SlidesComponent implements OnInit{
         this.fullsides = response.$values
         console.log(this.fullsides);
       });
-      
+
     }
-   
+
     startSlideshow() {
       this.interval = setInterval(() => {
         this.showNextSlide();

@@ -26,6 +26,7 @@ builder.Services.AddCors(options =>
         {
             builder.WithOrigins(
                 "http://localhost:4200",
+                "http://localhost:5200",
                 "https://www.ticketconcertcz.com"
                 )
                 .AllowAnyHeader()

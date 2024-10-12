@@ -29,6 +29,7 @@ import { PlaceorderComponent } from './placeorder/placeorder.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { GatewayComponent } from './gateway/gateway.component';
+import { provideRouter, withHashLocation } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import { GatewayComponent } from './gateway/gateway.component';
     NgxSliderModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

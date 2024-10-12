@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  private _baseUrl: string = environment.apiUrl;
+
   @Input() showSlider: boolean = false;
 
   isLoginActive: boolean = true;
@@ -43,7 +45,7 @@ export class LoginComponent {
       return;
     }
 
-    const registrationUrl = 'https://api.ticketconcertcz.com/api/User/Register-User';
+    const registrationUrl = `${this._baseUrl}/User/Register-User`;
 
     // Disable the sign-up button to prevent multiple clicks
     this.isRegistering = true;
@@ -81,7 +83,7 @@ export class LoginComponent {
 
   // Function to handle user login
   loginUser() {
-    const loginUrl = 'https://api.ticketconcertcz.com/api/User/Login-User';
+    const loginUrl = `${this._baseUrl}/User/Login-User`;
 
     this.http.post(loginUrl, {
       email: this.loginData.emailOrPhone,

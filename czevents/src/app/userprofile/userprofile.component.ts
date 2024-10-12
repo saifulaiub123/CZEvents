@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { UserserviceService } from '../auth/userservice.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-userprofile',
@@ -8,6 +9,8 @@ import { UserserviceService } from '../auth/userservice.service';
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit{
+  private _baseUrl: string = environment.apiUrl;
+
   @Input() showSlider: boolean = false;
   user: any;
   isUpcomingActive: boolean = true;
@@ -27,7 +30,7 @@ export class UserprofileComponent implements OnInit{
   }
 
   getUserData() {
-    const userDataUrl = 'https://api.ticketconcertcz.com/api/User/GetUserData';
+    const userDataUrl = `${this._baseUrl}/User/GetUserData`;
     const token = localStorage.getItem('authToken');
 
     if (!token) {
