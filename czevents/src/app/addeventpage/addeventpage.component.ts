@@ -92,7 +92,6 @@ export class AddeventpageComponent {
     // Send data
     return this.service.sendData(formData).subscribe({
       next: x => {
-        console.log(x);
         window.location.reload();
       },
       error: err => {
