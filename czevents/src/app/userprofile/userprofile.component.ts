@@ -42,7 +42,6 @@ export class UserprofileComponent implements OnInit{
 
     this.http.get(userDataUrl, { headers }).subscribe(
       (response: any) => {
-        console.log('User data retrieved successfully', response);
         this.user = response;
         this.userService.setUser(response); // Update the shared service
       },

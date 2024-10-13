@@ -57,7 +57,6 @@ export class NavbarComponent implements OnInit{
 
   hideMenuAndNavigate(route: string) {
     this.toggleMenu();
-    console.log('Navigating to:', route);
   }
 
   user: any;

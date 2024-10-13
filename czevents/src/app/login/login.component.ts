@@ -58,7 +58,6 @@ export class LoginComponent {
     })
     .subscribe(
       (response) => {
-        console.log('User registered successfully', response);
         alert('User registered successfully!');
 
         // Store the token and redirect
@@ -90,7 +89,6 @@ export class LoginComponent {
       password: this.loginData.password
     }).subscribe(
       (response: any) => {
-        console.log('Login successful', response);
 
         // Store the token in localStorage
         localStorage.setItem('authToken', response.token);

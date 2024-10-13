@@ -12,8 +12,6 @@ export class EventpageComponent {
   priceRangeString: string = '';
 
   constructor(private route: ActivatedRoute, private getservice: GetdataService) {
-    // const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
-    // this.getservice.getEvent(id).subscribe(x => console.log(x));
   }
 
   ngOnInit(): void {

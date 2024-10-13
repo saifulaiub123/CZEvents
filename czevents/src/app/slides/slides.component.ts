@@ -60,7 +60,6 @@ export class SlidesComponent implements OnInit{
         this.slides = response.$values || [];
         this.slides = this.slides.map(slideObj => slideObj.slide);
         this.fullsides = response.$values
-        console.log(this.fullsides);
       });
 
     }

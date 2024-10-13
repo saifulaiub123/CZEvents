@@ -19,7 +19,6 @@ export class EditbannerComponent {
   getSlides(){
     return this.service.getSlides().subscribe((x: any )=> {
       this.slides = x.$values;
-      console.log(x)
     })
   }
   onSubmit() {

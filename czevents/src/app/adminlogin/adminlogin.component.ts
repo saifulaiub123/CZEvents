@@ -36,7 +36,6 @@ export class AdminloginComponent {
     
 
     return this.getservice.login(formData).subscribe((x: LoginResponse) => {
-      console.log(x)
       localStorage.setItem("Authentication", x.token);
       this.router.navigate(['/Admin']);
     });

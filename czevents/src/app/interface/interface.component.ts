@@ -32,7 +32,6 @@ export class InterfaceComponent {
       (data: any) => {
         this.Events = data.$values || [];
         this.calculatePriceRanges(); // Calculate price ranges for all events
-        console.log(data); // Default to empty array if $values is not present
       },
       (error) => {
         console.error('Error fetching events:', error);
@@ -45,14 +44,12 @@ export class InterfaceComponent {
     this.Events.forEach(event => {
       if (event.priceRange && event.priceRange.$values) {
         const prices = event.priceRange.$values.map((priceObj: any) => priceObj.price);
-        console.log(prices)
         if (prices.length > 0) {
           const minPrice = Math.min(...prices);
           const maxPrice = Math.max(...prices);
           event.priceRangeString = `${minPrice}.00 - ${maxPrice}.00`;
         } else {
           event.priceRangeString = 'No prices available';
-          console.log(prices)
         }
       } else {
         event.priceRangeString = 'Price range not available';
