@@ -6,7 +6,6 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-
 export class GetdataService {
   private _baseUrl: string = environment.apiUrl;
 
@@ -14,11 +13,11 @@ export class GetdataService {
   private apiUrl2 = `${this._baseUrl}/Events/GetSpecialEvent/`
   constructor(private http: HttpClient) { }
 
-  getEvents(){
-    return this.http.get(this.apiUrl);
+  getEvents(): Observable<Event[]> {
+    return this.http.get<Event[]>(this.apiUrl);
   }
   getEvent(id: number) {
-    return this.http.get(this.apiUrl2+""+id);
+    return this.http.get<Event[]>(this.apiUrl2+""+id);
   }
   sendData(form: any){
     return this.http.post(`${this._baseUrl}/Events/AddEvent`, form);
