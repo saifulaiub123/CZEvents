@@ -15,7 +15,7 @@ export class GetdataService {
   constructor(private http: HttpClient) { }
 
   fetchEvents(): Observable<Event[]> {
-    return this.http.get<Event[]>(this.apiUrl);
+    return this.http.get<Event[]>(this.apiUrl, { withCredentials: true });
   }
   getEvent(id: number) {
     return this.http.get<Event[]>(this.apiUrl2+""+id);
