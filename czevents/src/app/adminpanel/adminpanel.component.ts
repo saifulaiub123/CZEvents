@@ -16,7 +16,7 @@ export class AdminpanelComponent {
   constructor(private getservice: GetdataService, private eventfilterservice: EventFilterService, private router: Router) {
   }
   getEvents() {
-    this.getservice.getEvents().subscribe(
+    this.getservice.fetchEvents().subscribe(
       (data: any) => {
         this.Events = data.$values || [];
         this.calculatePriceRanges(); // Calculate price ranges for all events

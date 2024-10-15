@@ -19,17 +19,17 @@ export class NavbarComponent implements OnInit{
   @Input() showSlider: boolean = true;
 
   constructor(private eventFilterService: EventFilterService, private getservice: GetdataService, private userService: UserserviceService, private router: Router, private cd: ChangeDetectorRef) {
-    this.getservice.getEvents().subscribe(x => this.events = x);
+    this.getservice.fetchEvents().subscribe(x => this.events = x);
   }
 
   filterEvents(eventtype: any){
     if (eventtype === 'ALL') {
-      this.getservice.getEvents().subscribe(events => {
+      this.getservice.fetchEvents().subscribe(events => {
         this.events = events;
         this.eventFilterService.sendData(this.events);
       });
     } else {
-      this.getservice.getEvents().subscribe(events => {
+      this.getservice.fetchEvents().subscribe(events => {
         this.events = events.filter(event => event.type == eventtype);
         this.eventFilterService.sendData(this.filteredEvents);
       });

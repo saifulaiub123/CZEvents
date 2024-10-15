@@ -28,7 +28,7 @@ export class InterfaceComponent {
 
 
   getEvents() {
-    this.getservice.getEvents().subscribe(
+    this.getservice.fetchEvents().subscribe(
       (data: any) => {
         this.Events = data.$values || [];
         this.calculatePriceRanges(); // Calculate price ranges for all events

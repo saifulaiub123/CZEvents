@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GetdataService {
   private _baseUrl: string = environment.apiUrl;
 
@@ -13,7 +14,7 @@ export class GetdataService {
   private apiUrl2 = `${this._baseUrl}/Events/GetSpecialEvent/`
   constructor(private http: HttpClient) { }
 
-  getEvents(): Observable<Event[]> {
+  fetchEvents(): Observable<Event[]> {
     return this.http.get<Event[]>(this.apiUrl);
   }
   getEvent(id: number) {
