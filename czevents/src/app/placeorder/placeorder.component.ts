@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetdataService } from '../getdata.service';
 
@@ -10,6 +10,7 @@ import { GetdataService } from '../getdata.service';
 export class PlaceorderComponent {
   priceRange: any[] = []; // To store the price range dynamically
   priceRangeString: any;
+  isSmallScreen: boolean = false;
 
   selectedCategory: any;
   eventDetails = {
@@ -19,7 +20,9 @@ export class PlaceorderComponent {
   showChosenTicket = false;
   quantity = 1;
   
-  constructor(private router: Router, private route2: ActivatedRoute, private getservice: GetdataService) {}
+  constructor(private router: Router, private route2: ActivatedRoute, private getservice: GetdataService) {
+    this.checkScreenWidth();
+  }
 
   ngOnInit(): void {
     this.getEvent();
@@ -29,6 +32,15 @@ export class PlaceorderComponent {
     }
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkScreenWidth();
+  }
+
+  checkScreenWidth() {
+    this.isSmallScreen = window.innerWidth < 770;
+  }
+  
   displayEventDetails(): void {
     const price = this.getPriceFromSelect();
     this.eventDetails.price = price;
@@ -37,7 +49,7 @@ export class PlaceorderComponent {
     this.showChosenTicket = true;
 
     // Update the final price in localStorage
-    localStorage.setItem('finalPrice', (this.getPriceNumber(price) * this.quantity).toString());
+    localStorage.setItem('price', (this.getPriceNumber(price) * this.quantity).toString());
   }
 
   dissapearEvent(): void {
@@ -93,22 +105,42 @@ export class PlaceorderComponent {
     });
   }
   
+  @ViewChild('priceSelect') priceSelect!: ElementRef;
 
   private getPriceFromSelect(): string {
-    const selectElement = document.getElementById('price-select') as HTMLSelectElement;
-    return selectElement.options[selectElement.selectedIndex].text;
-  }
+    if (!this.priceSelect) {
+        console.error("Select element not found");
+        return "0"; // Handle it appropriately
+    }
+    return this.priceSelect.nativeElement.options[this.priceSelect.nativeElement.selectedIndex].text;
+}
+
 
   private getPriceNumber(price: string): number {
-    const match = price.match(/\d+(\.\d+)?/);
-    return match ? parseFloat(match[0]) : 0;
+      const match = price.match(/\d+(\.\d+)?/);
+      return match ? parseFloat(match[0]) : 0;
   }
 
- updatePrice(): void {
+  updatePrice(): void {
     const price = this.getPriceFromSelect();
-    localStorage.setItem('quantity', this.quantity.toString());
-    localStorage.setItem('finalPrice', (this.getPriceNumber(price) * this.quantity).toString());
     this.eventDetails.price = "Kč " + (this.getPriceNumber(price) * this.quantity).toString() + ".00";
+  }
+
+  updatePriceForResponsive(): void{
+     this.eventDetails.price = "Kč " + (this.getPriceNumber(localStorage.getItem("price")) * this.quantity).toString() + ".00"
+     localStorage.setItem("finalPrice", this.eventDetails.price)
+  }
+
+  increaseQuantityForRespo(): void {
+    this.quantity++;
+    this.updatePriceForResponsive();
+  }
+
+  decreaseQuantityForRespo(): void {
+    if (this.quantity > 1) {
+      this.quantity--;
+      this.updatePriceForResponsive();
+    }
   }
   
 }

