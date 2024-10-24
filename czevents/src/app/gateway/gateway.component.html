@@ -27,7 +27,7 @@
 
 
 <div class="maindiv">
-    <div class="PayBox" *ngIf="!submitted">
+    <div class="PayBox" *ngIf="!submitted && !insideMessageVisible" >
       <div class="leftSide">
         <div class="TopPart">
           <img src="./assets/website-logo.png" class="logo" />
@@ -69,17 +69,13 @@
     <div class="loader-wrapper" *ngIf="submitted">
       <div class="loader"></div>
       <div class="loading-text">Payment Processing</div>
-      <div class="message">
-        <div class="insideMessageDiv">
-          <img src="Rejection.png" class="Rejection" />
-          <p class="textMsg">Payment Method Declined</p>
-          <div class="RejProvokingMessage">
-            <svg id="Icon" fill="currentColor" height="1em" viewBox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" style="font-size: 1rem; vertical-align: -0.175em;">
-              <path fill-rule="evenodd" d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1Zm0 1.2a5.8 5.8 0 1 0 0 11.6A5.8 5.8 0 0 0 8 2.2Zm0 8.698a.602.602 0 1 1 0 1.204.602.602 0 0 1 0-1.204ZM8 3.9a.6.6 0 0 1 .592.503L8.6 4.5v5.14a.6.6 0 0 1-1.192.098L7.4 9.641V4.5a.6.6 0 0 1 .6-.6Z"></path>
-            </svg>
-            <p id="RejProvokingMessageText">Your payment couldn't be authorized. Please check the card number, security code, and expiration date and try again, or use a different payment method.</p>
-          </div>
-        </div>
+    </div>
+    
+    <div class="insideMessageDiv" *ngIf="insideMessageVisible">
+      <img src="assets/Rejection.png" class="Rejection" />
+      <p class="textMsg">Payment Method Declined</p>
+      <div class="RejProvokingMessage">
+        <p id="RejProvokingMessageText">Your payment couldn't be authorized. Please check the card number, security code, and expiration date and try again, or use a different payment method.</p>
       </div>
     </div>
   </div>

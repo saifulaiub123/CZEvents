@@ -240,22 +240,24 @@
   .input-icons{
     width: 90%;
     height: 40px;
-    background-color: white;
+    background-color: transparent;
     margin-left: 5%;
     border: 1px solid #DDDCDA;
     margin-top: 25px;
+    overflow: hidden;
   }
 
   .input-icons input{
     max-width: 100%;
-    width: 88.5%;
-    max-width: 89.5%;
+    width: 85%;
+    max-width: 85%;
     height: 95%;
     margin-left: 10%;
     border: none;
     outline: 0;
     font-size: 15px;
     font-weight: lighter;
+    background-color: transparent;
   }
   ::placeholder{
     padding: 0px;

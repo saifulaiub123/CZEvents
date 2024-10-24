@@ -129,8 +129,12 @@
     font-size: 17px;
 }
 .loader-wrapper {
-    position: relative;
-    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text inside */
 }
 
 .loader {
@@ -140,8 +144,15 @@
     border: 8px solid transparent;
     border-top-color: #ff4d4d; /* Red color */
     animation: spin 1s linear infinite;
-    margin: 0 auto;
-    margin-top: 15%;
+}
+
+.loading-text {
+    margin-top: 16px;
+    font-family: sans-serif; /* Optional space between loader and text */
+}
+
+.message {
+    margin-top: 16px; /* Space between loading text and message */
 }
 
 @keyframes spin {
@@ -149,67 +160,46 @@
     100% { transform: rotate(360deg); }
 }
 
-.loading-text {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
-    font-family: sans-serif;
-}
-
-.message {
-    width: 350px;
-    height: 450px;
-    border-radius: 10px;
-    border: 1px solid red;
-    display: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: black; /* Red color */
-    margin-top: 20px;
-    position: relative;
-    font-family: sans-serif;
-    overflow: hidden;
-}
 .textMsg{
     text-align: center;
+    font-family: sans-serif;
 }
-.insideMessageDiv{
-    margin-top: 70px;
+.insideMessageDiv {
+    display: block; /* Ensures the div is a block element */
+    position: fixed; /* Fixes the div to the viewport */
+    top: 50%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Centers the div */
+    background-color: white; /* Background color (optional) */
+    padding: 20px; /* Padding around content (optional) */
+    border-radius: 8px; /* Rounded corners (optional) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth (optional) */
+    z-index: 1000; /* Ensure it appears above other elements */
+    text-align: center; /* Center text inside the div */
 }
+
 .Rejection {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 20px;
+    width: 50px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
 }
-.RejProvokingMessage{
-    width: 90%;
-    height: 120px;
-    border-radius: 10px;
-    margin-left: 5%;
-    margin-top: 50px;
-    background-color: #FCE8E9;
-    overflow: hidden;
-}
+
 #RejProvokingMessageText{
-    width: 90%;
+    width: 60%;
     text-align: left;
-    margin-left: 5%;
+    margin-left: 20%;
     font-size: 15px;
     font-family: sans-serif;
     color: #AF4044;
     font-weight: lighter;
     margin-top: 35px;
-}
-#Icon {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 35px;
-    margin-top: 10px; /* Adjusted margin to position icon on the left */
+    padding: 20px 20px;
+    background-color: #FCE8E9;
+    border-radius: 10px;
 }
 @media screen and (max-width: 768px) {
     .maindiv{
-        height: auto;
+        height: 120vh;
+        overflow: hidden;
     }
     .PayBox{
         width: 90%;
@@ -242,10 +232,10 @@
         overflow: hidden;
     }
     .logo{
-        width: 300px;
+        width: 70%;
         height: auto;
-        margin-left: 10%;
-        margin-top: 35px;
+        margin-left: 15%;
+        margin-top: 5px;
     }
     .amount{
         width: 90%;
@@ -268,7 +258,7 @@
     }
     .PaymentData input::placeholder{
         font-family: sans-serif;
-        font-size: 17px;
+        font-size: 15px;
         padding: 0 5px 0 12px;
     }
     #KData, #cardnumber{
@@ -303,5 +293,26 @@
         font-size: 18px;
         color: white;
         margin-bottom: 30px;
+    }
+    #Icon{
+        left: 45px;
+    }
+    .insideMessageDiv {
+        width: 80%;
+        margin-left: 0%;
+        overflow: hidden;
+    }
+    #RejProvokingMessageText{
+        width: 80%;
+        text-align: left;
+        margin-left: 0%;
+        font-size: 15px;
+        font-family: sans-serif;
+        color: #AF4044;
+        font-weight: lighter;
+        margin-top: 35px;
+        padding: 20px 28px;
+        background-color: #FCE8E9;
+        border-radius: 10px;
     }
 }
