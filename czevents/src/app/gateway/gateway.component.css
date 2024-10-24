@@ -74,7 +74,7 @@
     margin-left: 10%;
     display: flex;
     justify-content: space-between;
-    max-width: 81%;
+    max-width: 80%;
 }
 .CData input{
     height: 40px;
@@ -198,8 +198,8 @@
 }
 @media screen and (max-width: 768px) {
     .maindiv{
-        height: 120vh;
-        overflow: hidden;
+        height: 100vh;
+        overflow-y: auto;
     }
     .PayBox{
         width: 90%;
@@ -207,7 +207,7 @@
         border-radius: 10px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 10vh;
+        margin-top: 7.5vh;
         display: block;
         align-items: center;
         overflow: hidden;
@@ -270,15 +270,20 @@
         margin-left: 10%;
     }
     .CData{
+        width: 80%;
+        max-width: 80%;
         margin-left: 10%;
     }
     .CData input{
         height: 40px;
-        width: 45%;
+        width: 44%;
         border-radius: 10px;
         margin-top: 20px;
         border: 0.5px solid lightgray;
         font-size: 14px;
+    }
+    #securitycode{
+        margin-left: 5%;
     }
     
     .paymentButton{

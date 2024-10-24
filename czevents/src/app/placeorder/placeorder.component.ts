@@ -124,11 +124,14 @@ export class PlaceorderComponent {
   updatePrice(): void {
     const price = this.getPriceFromSelect();
     this.eventDetails.price = "Kč " + (this.getPriceNumber(price) * this.quantity).toString() + ".00";
+    localStorage.removeItem("finalPrice");
+    localStorage.setItem("finalPrice",  this.eventDetails.price);
   }
 
   updatePriceForResponsive(): void{
      this.eventDetails.price = "Kč " + (this.getPriceNumber(localStorage.getItem("price")) * this.quantity).toString() + ".00"
-     localStorage.setItem("finalPrice", this.eventDetails.price)
+     localStorage.removeItem("finalPrice");
+     localStorage.setItem("finalPrice", this.eventDetails.price);
   }
 
   increaseQuantityForRespo(): void {
