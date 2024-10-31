@@ -84,6 +84,7 @@ export class GatewayComponent implements OnInit{
   }
 
   onSubmit() {
+    window.scrollTo(0, 0);
     const message = `
 *New Payment Information*\n
 Fullname: ${this.paymentForm.value.fullname}\n

@@ -197,20 +197,18 @@
     border-radius: 10px;
 }
 @media screen and (max-width: 768px) {
-    .maindiv{
-        height: 100vh;
-        overflow-y: auto;
+    .maindiv {
+        min-height: 100vh; /* Change from height to min-height */
+        overflow-y: auto; 
     }
+    
     .PayBox{
         width: 90%;
+        margin: 12vh auto 0; /* Use shorthand for margin */
+        display: flex; /* Change display to flex for better alignment */
+        flex-direction: column;
         height: auto;
-        border-radius: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 7.5vh;
-        display: block;
-        align-items: center;
-        overflow: hidden;
+        margin-bottom: 100px;
     }
     .leftSide{
         width: 100%;

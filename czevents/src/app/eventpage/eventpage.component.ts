@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { GetdataService } from '../getdata.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-eventpage',
@@ -11,7 +11,12 @@ export class EventpageComponent {
   Event: any;
   priceRangeString: string = '';
 
-  constructor(private route: ActivatedRoute, private getservice: GetdataService) {
+  constructor(private router: Router, private route: ActivatedRoute, private getservice: GetdataService) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
   }
 
   ngOnInit(): void {

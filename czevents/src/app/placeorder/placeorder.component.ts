@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { GetdataService } from '../getdata.service';
 
 @Component({
@@ -21,6 +21,11 @@ export class PlaceorderComponent {
   quantity = 1;
   
   constructor(private router: Router, private route2: ActivatedRoute, private getservice: GetdataService) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
     this.checkScreenWidth();
   }
 
@@ -42,6 +47,7 @@ export class PlaceorderComponent {
   }
   
   displayEventDetails(): void {
+    window.scrollTo(0, 0);
     const price = this.getPriceFromSelect();
     this.eventDetails.price = price;
 
