@@ -1,321 +1,526 @@
-.maindiv{
+@font-face {
+    font-family: 'ComeniaSansCond';
+    src: url('/assets/ComeniaSansCondTRIAL-Medium-BF65a7351050580.otf') format('opentype');
+    font-weight: normal; /* Adjust if necessary */
+    font-style: normal; /* Adjust if necessary */
+}
+@font-face {
+    font-family: 'ComeniaSansCond-Lighter';
+    src: url('/assets/ComeniaSansCondTRIAL-Regular-BF65a73510308f2.otf') format('opentype');
+    font-weight: normal; /* Adjust if necessary */
+    font-style: normal; /* Adjust if necessary */
+}
+
+.mainSpace{
     width: 100%;
     height: 100vh;
-    overflow: hidden;
-    background-color: #F1F6F7;
+    background: linear-gradient(to right, #F8F8F8 50%, #FFFFFF 50%);
 }
-.PayBox{
-    width: 50%;
-    height: 50vh;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-.leftSide{
-    width: 50%;
-    height: 100%;
-}
-.rightSide{
-    width: 50%;
-    height: 100%;
-    background-color: white;
-}
-.TopPart{
-    height: 60%;
-    background-color: #72ECF4;
-}
-.BottomPart{
-    height: 40%;
-    background-color: #17C9D5;
-    overflow: hidden;
-}
-.logo{
-    width: 300px;
-    height: auto;
-    margin-left: 20%;
-    margin-top: 85px;
-}
-.amount{
-    width: 90%;
-    height: 40px;
-    border-radius: 10px;
-    margin-left: 5%;
-    border: 2px solid white;
-    margin-top: 80px;
-}
-.AmountText{
-    font-family: sans-serif;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    margin-top: 10px;
-}
-.PaymentData{
-    margin-top: 45px;
-}
-.PaymentData input::placeholder{
-    font-family: sans-serif;
-    font-size: 15px;
-    padding: 0 5px 0 12px;
-}
-#KData, #cardnumber{
-    width: 80%;
-    height: 40px;
-    border-radius: 10px;
-    border: 0.5px solid lightgray;
-    margin-top: 20px;
-    margin-left: 10%;
-}
-.CData{
-    margin-left: 10%;
+.space-construction{
+    width: 48%;
+    height: 100vh;
     display: flex;
     justify-content: space-between;
-    max-width: 80%;
-}
-.CData input{
-    height: 40px;
-    width: 47%;
-    border-radius: 10px;
-    margin-top: 20px;
-    border: 0.5px solid lightgray;
- 
-}
-
-.paymentButton{
-    width: 80%;
-    height: 45px;
-    border-radius: 10px;
-    border: none;
-    background-color: #72ECF4;
-    margin-top: 23px;
-    margin-left: 10%;
-    cursor: pointer;
-    font-size: 18px;
-    color: white;
-}
-.alertBox {
-    width: 260px;
-    height: auto;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.alertBox.show {
-    opacity: 1;
-}
-
-.alertBox > div {
-    margin-top: 5.5px;
-    width: 280px;
-    height: 150px;
-    border-radius: 10px;
-    background-color: red;
-    color: white;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
+    align-items: start;
+    margin-left: 25%;
+    margin-right: auto;
     overflow: hidden;
 }
-
-.alertBox > div > p {
-    margin-top: 60px;
-    font-size: 17px;
+.side-ofspace{
+    margin-top: 50px;
+    margin-left: 10px;
+    overflow: hidden;
 }
-.loader-wrapper {
+.side-ofspace2{
+    margin-top: 50px;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.title-for-price{
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    height: 100vh; /* Full viewport height */
-    text-align: center; /* Center text inside */
+    align-items: center;
 }
-
-.loader {
-    width: 100px;
-    height: 100px;
+.HeaderImage-fallbackIcon {
+    fill: #8D8D8D;
+}
+.iconSpacing{
     border-radius: 50%;
-    border: 8px solid transparent;
-    border-top-color: #ff4d4d; /* Red color */
-    animation: spin 1s linear infinite;
+    background-color: white;
+    display: inline-block;
+    width: 30px;
+    height: 30px; 
+    display: flex; 
+    justify-content: center; 
+    place-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
 }
-
-.loading-text {
-    margin-top: 16px;
-    font-family: sans-serif; /* Optional space between loader and text */
-}
-
-.message {
-    margin-top: 16px; /* Space between loading text and message */
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.textMsg{
-    text-align: center;
-    font-family: sans-serif;
-}
-.insideMessageDiv {
-    display: block; /* Ensures the div is a block element */
-    position: fixed; /* Fixes the div to the viewport */
-    top: 50%; /* Position from the top */
-    left: 50%; /* Position from the left */
-    transform: translate(-50%, -50%); /* Centers the div */
-    background-color: white; /* Background color (optional) */
-    padding: 20px; /* Padding around content (optional) */
-    border-radius: 8px; /* Rounded corners (optional) */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth (optional) */
-    z-index: 1000; /* Ensure it appears above other elements */
-    text-align: center; /* Center text inside the div */
-}
-
-.Rejection {
-    width: 50px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-}
-
-#RejProvokingMessageText{
-    width: 60%;
-    text-align: left;
-    margin-left: 20%;
+.organizer-name{
+    font-family: "ComeniaSansCond-Lighter";
     font-size: 15px;
-    font-family: sans-serif;
-    color: #AF4044;
+    font-weight: normal;
+    margin-left: 5px;
+}
+.pricing-information{
+    margin-top: 25px
+}
+.pricing-information p {
+    margin-bottom: 0;
+    color: #757575;
+    font-family: "ComeniaSansCond-Lighter";
+    font-weight: lighter; 
+    font-size: 16px;
+}
+.pricing-information h2{
+    font-family: "ComeniaSansCond";
+    font-size: 35px;
     font-weight: lighter;
-    margin-top: 35px;
-    padding: 20px 20px;
-    background-color: #FCE8E9;
-    border-radius: 10px;
+    margin-top: 12px;
+    letter-spacing: 1.2px;
+}
+.contact-information{
+    font-family: "ComeniaSansCond-Lighter";
+    color: #646464;
+    overflow: hidden;
+}
+.contact-information > p{
+    font-family: "ComeniaSansCond";
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.contact-information > div {
+    margin-top: 30px;
+}
+.contact-information > div > p{
+    font-family: "ComeniaSansCond-Lighter";
+    font-size: 15px;
+    margin-top: 0px;
+}
+.contact-information > div > input{
+    margin-top: 0px;
+    width: 370px;
+    height: 33px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    box-shadow: 0 0 10px #D1E1EA;
+    outline: none;
+}
+/* Wrapper for select to position the icon */
+.contact-information > div > .select-wrapper {
+    position: relative;
+    width: 375px;
+}
+
+/* Style the select element */
+.contact-information > div > .select-wrapper select {
+    margin-top: 0;
+    width: 100%;
+    height: 37px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    box-shadow: 0 0 10px #D1E1EA;
+    outline: none;
+    font-weight: lighter;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 30px;
+    padding-left: 10px; /* Extra padding for icon space */
+}
+
+/* Position the SVG icon over the select */
+.contact-information > div > .select-wrapper .select-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px; /* Adjust width */
+    height: 14px; /* Adjust height */
+    fill: black; /* Set icon color */
+    pointer-events: none; /* Prevent the SVG from blocking clicks */
+}
+
+
+.card-input {
+    position: relative;
+    margin-top: 10px;
+}
+.card-environment{
+    padding-top: 20px;
+    position: relative;
+    max-width: 376px;
+}
+
+.card-number-wrapper {
+    position: relative;
+    width: 376px; /* Match the width of the input */
+}
+
+.card-number {
+    width: 100%;
+    height: 36px;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 10px;
+    outline: none;
+    box-sizing: border-box; /* Add this */
+}
+
+.card-data {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.image-container {
+    position: absolute;
+    right: 10px; /* Adjust to move images in/out */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px; /* Space between images */
+}
+
+.image-container img {
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+}
+.card-exp{
+    width: 45.9%;
+    height: 33px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+    border-left: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    box-shadow: 0 0 10px #D1E1EA;
+    outline: none;
+    padding-left: 10px;
+}
+.card-cvv{
+    width: 46.9%;
+    height: 33px;
+    border-bottom-right-radius: 5px;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    box-shadow: 0 0 10px #D1E1EA;
+    outline: none;
+    padding-left: 10px;
+}
+.cardholder-information{
+    margin-top: 20px;
+}
+#cardholder-information{
+    padding-left: 10px;
+    width: 360px;
+}
+.payment-button{
+    font-weight: 600;
+    font-size: 15px;
+    width: 375px;
+    height: 43px;
+    border-radius: 7px;
+    background-color: #0074D4;
+    color: #99C7EE;
+    border: none;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.footer-powered-by {
+    display: flex;                   /* Use flexbox for layout */
+    align-items: center;            /* Center items vertically */
+    justify-content: center;        /* Center items horizontally */
+    font-size: 14px;                /* Adjust font size */
+    color: #333;                    /* Text color */
+    gap: 0;                         /* No gap between items */
+}
+
+.footer-powered-by svg {
+    width: 33px;                    /* Set width of the SVG */
+    height: auto;                   /* Maintain aspect ratio */
+    fill: #333;                     /* Fill color of the SVG */
+}
+
+.terms-privacy a {
+    text-decoration: none;           /* Remove underline from links */
+    color: #333;                     /* Link color */
+    padding: 0;                     /* No padding around links */
+}
+
+.terms-privacy a:hover {
+    text-decoration: underline;      /* Underline on hover */
+}
+
+/* Optional: Add styles for the terms and privacy span */
+.terms-privacy {
+    display: flex;                  /* Flex to align terms and privacy */
+    align-items: center;            /* Center terms and privacy links */
+    margin-left: 5px;               /* Optional space between icon and links */
+}
+.card-error {
+    
+    width: 100%;
+    top: 80px; /* Adjusts vertical position of error messages */
+    color: red;
+    font-size: 13px;
+    font-family: "ComeniaSansCond-Lighter";
+    margin-top: 5px;
+    padding: 5px;
+}
+.card-icon {
+    display: none;
+  }
+  
+  .card-icon.visible {
+    display: inline;
+  }
+  
+.card-number.invalid {
+  border-color: red;
+}
+
+.card-exp.invalid,
+.card-cvv.invalid {
+    border: 1px solid red; /* Red top border for expiration and CVV */
+}
+.email-input.invalid {
+    border-color: red;
+}
+.invalid {
+    border: 1px solid red;
 }
 @media screen and (max-width: 768px) {
-    .maindiv {
-        min-height: 100vh; /* Change from height to min-height */
-        overflow-y: auto; 
+    
+    .mainSpace{
+        width: 100%;
+        height: auto;
+        background: linear-gradient(to bottom, #F8F8F8 30%, #FFFFFF 30% 100%);
+    }
+    .space-construction{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-left: 0px;
+    }
+    .side-ofspace{
+       width: 100%;
+       margin-top: 5vh;
+       margin-left: 15%;
+       height: auto;
+    }
+    form{
+        margin-top: 12.5vh;
+        height: auto;
+    }
+    .contact-information{
+        margin-left: 0px;
+    }
+
+
+    .contact-information > div > input{
+        margin-top: 0px;
+        width: 73.5%;
+        height: 33px;
+        border-radius: 5px;
+        border: 1px solid lightgrey;
+        box-shadow: 0 0 10px #D1E1EA;
+        outline: none;
+    }
+    /* Wrapper for select to position the icon */
+    .contact-information > div > .select-wrapper {
+        position: relative;
+        width: 375px;
     }
     
-    .PayBox{
-        width: 90%;
-        margin: 12vh auto 0; /* Use shorthand for margin */
-        display: flex; /* Change display to flex for better alignment */
-        flex-direction: column;
-        height: auto;
-        margin-bottom: 100px;
+    /* Style the select element */
+    .contact-information > div > .select-wrapper select {
+        margin-top: 0;
+        width: 78%;
+        height: 37px;
+        border-radius: 5px;
+        border: 1px solid lightgrey;
+        box-shadow: 0 0 10px #D1E1EA;
+        outline: none;
+        font-weight: lighter;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 30px;
+        padding-left: 10px; /* Extra padding for icon space */
     }
-    .leftSide{
-        width: 100%;
-        height: 50%;
+    
+    /* Position the SVG icon over the select */
+    .contact-information > div > .select-wrapper .select-arrow {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 14px; /* Adjust width */
+        height: 14px; /* Adjust height */
+        fill: black; /* Set icon color */
+        pointer-events: none; /* Prevent the SVG from blocking clicks */
     }
-    .rightSide{
-        width: 100%;
-        height: auto;
-        background-color: white;
-        overflow: hidden;
-    }
-    .TopPart{
-        height: 50%;
-        background-color: #72ECF4;
-    }
-    .BottomPart{
-        height: 50%;
-        background-color: #17C9D5;
-        overflow: hidden;
-    }
-    .logo{
-        width: 70%;
-        height: auto;
-        margin-left: 15%;
-        margin-top: 5px;
-    }
-    .amount{
-        width: 90%;
-        height: 40px;
-        border-radius: 10px;
-        margin-left: 5%;
-        border: 2px solid white;
-        margin-top: 100px;
-        margin-bottom: 30px;
-    }
-    .AmountText{
-        font-family: sans-serif;
-        font-size: 20px;
-        color: white;
-        text-align: center;
+    
+    
+    .card-input {
+        position: relative;
         margin-top: 10px;
     }
-    .PaymentData{
-        margin-top: 45px;
-    }
-    .PaymentData input::placeholder{
-        font-family: sans-serif;
-        font-size: 15px;
-        padding: 0 5px 0 12px;
-    }
-    #KData, #cardnumber{
-        width: 80%;
-        height: 40px;
-        border-radius: 10px;
-        border: 0.5px solid lightgray;
-        margin-top: 20px;
-        margin-left: 10%;
-    }
-    .CData{
-        width: 80%;
-        max-width: 80%;
-        margin-left: 10%;
-    }
-    .CData input{
-        height: 40px;
-        width: 44%;
-        border-radius: 10px;
-        margin-top: 20px;
-        border: 0.5px solid lightgray;
-        font-size: 14px;
-    }
-    #securitycode{
-        margin-left: 5%;
+    .card-environment{
+        padding-top: 20px;
+        position: relative;
+        max-width: 75%;
     }
     
-    .paymentButton{
-        width: 80%;
-        height: 45px;
-        border-radius: 10px;
-        border: none;
-        background-color: #72ECF4;
-        margin-top: 30px;
-        margin-left: 10%;
-        cursor: pointer;
-        font-size: 18px;
-        color: white;
-        margin-bottom: 30px;
+    .card-number-wrapper {
+        position: relative;
+        width: 100%; /* Match the width of the input */
     }
-    #Icon{
-        left: 45px;
+    
+    .card-number {
+        width: 100%;
+        height: 36px;
+        border-left: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+        border-top: 1px solid lightgrey;
+        border-bottom: none;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding-left: 10px;
+        outline: none;
+        box-sizing: border-box; /* Add this */
     }
-    .insideMessageDiv {
-        width: 80%;
-        margin-left: 0%;
-        overflow: hidden;
+    
+    .card-data {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
     }
-    #RejProvokingMessageText{
-        width: 80%;
-        text-align: left;
-        margin-left: 0%;
+    
+    .image-container {
+        position: absolute;
+        right: 10px; /* Adjust to move images in/out */
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        gap: 5px; /* Space between images */
+    }
+    
+    .image-container img {
+        width: 20px; /* Adjust the size as needed */
+        height: 20px; /* Adjust the size as needed */
+    }
+    .card-exp{
+        width: 45.9%;
+        height: 33px;
+        border-bottom-left-radius: 5px;
+        border-right: none;
+        border-left: 1px solid lightgrey;
+        border-top: 1px solid lightgrey;
+        border-bottom: 1px solid lightgrey;
+        box-shadow: 0 0 10px #D1E1EA;
+        outline: none;
+        padding-left: 10px;
+    }
+    .card-cvv{
+        width: 46.9%;
+        height: 33px;
+        border-bottom-right-radius: 5px;
+        border-left: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+        border-top: 1px solid lightgrey;
+        border-bottom: 1px solid lightgrey;
+        box-shadow: 0 0 10px #D1E1EA;
+        outline: none;
+        padding-left: 10px;
+    }
+    .cardholder-information{
+        margin-top: 20px;
+    }
+    #cardholder-information{
+        padding-left: 10px;
+        width: 71.5%;
+    }
+    .payment-button{
+        font-weight: 600;
         font-size: 15px;
-        font-family: sans-serif;
-        color: #AF4044;
-        font-weight: lighter;
-        margin-top: 35px;
-        padding: 20px 28px;
-        background-color: #FCE8E9;
-        border-radius: 10px;
+        width: 75%;
+        height: 43px;
+        border-radius: 7px;
+        background-color: #0074D4;
+        color: #99C7EE;
+        border: none;
+        margin-top: 25px;
+        cursor: pointer;
     }
+    
+    .footer-powered-by {                  /* Use flexbox for layout */          /* Center items vertically */
+        position: absolute;
+        margin-left: 15%;  /* Center items horizontally */
+        font-size: 14px;                /* Adjust font size */
+        color: #333;                    /* Text color */
+        gap: 0;                         /* No gap between items */
+    }
+    
+    .footer-powered-by svg {
+        width: 33px;                    /* Set width of the SVG */
+        height: auto;                   /* Maintain aspect ratio */
+        fill: #333;                     /* Fill color of the SVG */
+    }
+    
+    .terms-privacy a {
+        text-decoration: none;           /* Remove underline from links */
+        color: #333;                     /* Link color */
+        padding: 0;                     /* No padding around links */
+    }
+    
+    .terms-privacy a:hover {
+        text-decoration: underline;      /* Underline on hover */
+    }
+    
+    /* Optional: Add styles for the terms and privacy span */
+    .terms-privacy {
+        display: flex;                  /* Flex to align terms and privacy */
+        align-items: center;            /* Center terms and privacy links */
+        margin-left: 5px;               /* Optional space between icon and links */
+    }
+    .card-error {
+        
+        width: 100%;
+        top: 80px; /* Adjusts vertical position of error messages */
+        color: red;
+        font-size: 13px;
+        font-family: "ComeniaSansCond-Lighter";
+        margin-top: 5px;
+        padding: 5px;
+    }
+    .card-icon {
+        display: none;
+      }
+      
+      .card-icon.visible {
+        display: inline;
+      }
+      
+    .card-number.invalid {
+      border-color: red;
+    }
+    
+    .card-exp.invalid,
+    .card-cvv.invalid {
+        border: 1px solid red; /* Red top border for expiration and CVV */
+    }
+    .email-input.invalid {
+        border-color: red;
+    }
+    .invalid {
+        border: 1px solid red;
+    }
+    
 }

